@@ -17,16 +17,19 @@ const JobSchema = new Schema({
         type: String,
         required: true
       },
-      contact_name: {
+      contactName: {
         type: String
       },
-      contact_email: {
+      contactEmail: {
         type: String
       },
-      contact_phone: {
+      contactPhone: {
         type: String
       },
       offer: {
+        type: String
+      },
+      stage: {
         type: String
       }
     }

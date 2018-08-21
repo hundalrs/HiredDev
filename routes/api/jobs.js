@@ -28,4 +28,30 @@ router.get(
   }
 );
 
+// @route     POST api/job/add
+// @desc      Add job to job route
+// @access    Private
+router.post(
+  "/add",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Job.findOne({ user: req.user.id }).then(job => {
+      const newJob = {
+        company: req.body.company,
+        position: req.body.position,
+        contactName: req.body.contactName,
+        contactEmail: req.body.contactEmail,
+        contactPhone: req.body.contactPhone,
+        offer: req.body.offer,
+        stage: req.body.stage
+      };
+
+      // Add to allJobs array
+      job.allJobs.unshift(newJob);
+
+      profile.save().then(profile => res.json(profile));
+    });
+  }
+);
+
 module.exports = router;

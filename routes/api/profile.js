@@ -20,6 +20,7 @@ router.get(
   (req, res) => {
     const errors = {};
     Profile.findOne({ user: req.user.id })
+      .populate("user", ["name"])
       .then(profile => {
         if (!profile) {
           errors.noprofile = "There is no profile for this user";
@@ -66,13 +67,15 @@ router.post(
 
         // Check if handle exists
         Profile.findOne({ handle: profileFields.handle }).then(profile => {
-          errors.handle = "That handle already exists";
-          res.status(400).json(errors);
+          if (profile) {
+            errors.handle = "That handle already exists";
+            res.status(400).json(errors);
+          }
+
+          // Save Profile
+          new Profile(profileFields).save().then(profile => res.json(profile));
         });
       }
-
-      // Save Profile
-      new Profile(profileFields).save().then(profile => res.json(profile));
     });
   }
 );
