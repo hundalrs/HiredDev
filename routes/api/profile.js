@@ -8,7 +8,7 @@ const validateProfileInput = require("../../validation/profile");
 
 // Load Profile Model
 const Profile = require("../../models/Profile");
-// Load User Profile
+// Load User Model
 const User = require("../../models/User");
 
 // @route     GET api/profile
@@ -76,6 +76,21 @@ router.post(
           new Profile(profileFields).save().then(profile => res.json(profile));
         });
       }
+    });
+  }
+);
+
+// @route     DELETE api/profile
+// @desc      Create user and profile
+// @access    Private
+router.delete(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Profile.findOneAndRemove({ user: req.user.id }).then(() => {
+      User.findOneAndRemove({ _id: req.user.id }).then(() =>
+        res.json({ success: true })
+      );
     });
   }
 );
