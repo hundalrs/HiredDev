@@ -14,14 +14,14 @@ class Landing extends Component {
           <br />
           <br />
           <br />
-          <h5>
-            Keep track of your applications and organization your job search
-            now!
+          <h5 className="margin-to-button">
+            Keep track of your applications and organization during your job
+            search now!
           </h5>
-          <Link to="/signup" className="btn btn-lg btn-light mt-5 mr-2">
+          <Link to="/signup" className="btn btn-lg btn-info mt-5 mr-2">
             Sign Up
           </Link>
-          <Link to="/login" className="btn btn-lg btn-light mt-5">
+          <Link to="/login" className="btn btn-lg btn-info mt-5">
             Login
           </Link>
         </div>
