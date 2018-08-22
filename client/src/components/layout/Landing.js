@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import "../../styles/landing.css";
 
 class Landing extends Component {
@@ -16,12 +18,12 @@ class Landing extends Component {
             Keep track of your applications and organization your job search
             now!
           </h5>
-          <a href="register.html" className="btn btn-lg btn-light mt-5 mr-2">
+          <Link to="/signup" className="btn btn-lg btn-light mt-5 mr-2">
             Sign Up
-          </a>
-          <a href="login.html" className="btn btn-lg btn-light mt-5">
+          </Link>
+          <Link to="/login" className="btn btn-lg btn-light mt-5">
             Login
-          </a>
+          </Link>
         </div>
       </div>
     );
