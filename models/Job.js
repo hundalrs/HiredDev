@@ -31,6 +31,9 @@ const JobSchema = new Schema({
       },
       stage: {
         type: String
+      },
+      location: {
+        type: String
       }
     }
   ]
