@@ -12,7 +12,6 @@ class Navbar extends Component {
     e.preventDefault();
     this.props.logoutUser();
     this.props.clearJobs();
-    window.location.href = "/";
   }
 
   render() {
