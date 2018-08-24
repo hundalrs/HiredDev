@@ -29,7 +29,7 @@ const JobSchema = new Schema({
       offer: {
         type: String
       },
-      stage: {
+      status: {
         type: String
       },
       location: {
