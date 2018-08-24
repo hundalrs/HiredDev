@@ -55,7 +55,8 @@ router.post(
         contactEmail: req.body.contactEmail,
         contactPhone: req.body.contactPhone,
         offer: req.body.offer,
-        location: req.body.location
+        location: req.body.location,
+        status: req.body.status
       };
 
       if (!job) {

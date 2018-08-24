@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentJobs } from "../../actions/jobActions";
 import Spinner from "../common/Spinner";
+import "react-table/react-table.css";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -21,7 +22,18 @@ class Dashboard extends Component {
     } else {
       // Check if logged in user has jobs data
       if (Object.keys(jobs).length > 0) {
-        dashboardContent = <h4>DISPLAY JOBS</h4>;
+        dashboardContent = (
+          <div>
+            <br />
+            <h4 className="mb-4">
+              {user.name.slice(0, user.name.indexOf(" "))}
+              's Applications
+            </h4>
+            <Link to="/add-job" className="btn btn-sm btn-info mb-2">
+              Add Job
+            </Link>
+          </div>
+        );
       } else {
         // User logged in but has no jobs
         dashboardContent = (
@@ -38,7 +50,7 @@ class Dashboard extends Component {
 
     return (
       <div className="dashboard">
-        <h1>Dashboard</h1>
+        <h1 className="mt-4">Dashboard</h1>
         {dashboardContent}
       </div>
     );

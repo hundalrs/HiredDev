@@ -1,6 +1,11 @@
 import axios from "axios";
 
-import { GET_JOBS, JOBS_LOADING, CLEAR_CURRENT_JOBS } from "./types";
+import {
+  GET_JOBS,
+  JOBS_LOADING,
+  CLEAR_CURRENT_JOBS,
+  GET_ERRORS
+} from "./types";
 
 // Get Jobs
 export const getCurrentJobs = () => dispatch => {
@@ -17,6 +22,19 @@ export const getCurrentJobs = () => dispatch => {
       dispatch({
         type: GET_JOBS,
         payload: {}
+      })
+    );
+};
+
+// Add Jobs
+export const ADD_JOB = (sendData, history) => dispatch => {
+  axios
+    .post("/api/jobs/add", sendData)
+    .then(res => history.push("/dashboard"))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
       })
     );
 };

@@ -6,7 +6,8 @@ module.exports = function validateJobInput(data) {
 
   data.company = !isEmpty(data.company) ? data.company : "";
   data.position = !isEmpty(data.position) ? data.position : "";
-  data.stage = !isEmpty(data.stage) ? data.stage : "";
+  data.status = !isEmpty(data.status) ? data.status : "";
+  data.location = !isEmpty(data.location) ? data.location : "";
 
   if (Validator.isEmpty(data.company)) {
     errors.company = "Company is required";
@@ -16,8 +17,12 @@ module.exports = function validateJobInput(data) {
     errors.position = "Position is required";
   }
 
-  if (Validator.isEmpty(data.stage)) {
-    errors.stage = "Stage is required";
+  if (Validator.isEmpty(data.status)) {
+    errors.status = "Status is required";
+  }
+
+  if (Validator.isEmpty(data.location)) {
+    errors.location = "Location is required";
   }
 
   return {
