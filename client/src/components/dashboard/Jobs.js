@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { deleteJob } from "../../actions/jobActions";
 
 class Jobs extends Component {
+  onDelete(id) {
+    this.props.deleteJob(id);
+  }
+
   render() {
     const jobs = this.props.myJobs.map(job => (
       <tr key={job._id}>
@@ -16,7 +20,12 @@ class Jobs extends Component {
         <td>{job.contactEmail}</td>
         <td>{job.contactPhone}</td>
         <td>
-          <button className="btn btn-danger">Delete</button>
+          <button
+            onClick={this.onDelete.bind(this, job._id)}
+            className="btn btn-danger"
+          >
+            Delete
+          </button>
         </td>
       </tr>
     ));
@@ -47,4 +56,11 @@ class Jobs extends Component {
   }
 }
 
-export default connect(null)(withRouter(Jobs));
+Jobs.propTypes = {
+  deleteJob: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  { deleteJob }
+)(Jobs);

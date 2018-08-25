@@ -39,6 +39,25 @@ export const ADD_JOB = (sendData, history) => dispatch => {
     );
 };
 
+// Delete Job
+
+export const deleteJob = id => dispatch => {
+  axios
+    .delete(`/api/jobs/delete/${id}`)
+    .then(res =>
+      dispatch({
+        type: GET_JOBS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
 // Jobs loading
 export const setJobLoading = () => {
   return {
