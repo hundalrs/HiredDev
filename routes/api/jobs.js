@@ -31,6 +31,26 @@ router.get(
   }
 );
 
+// @route     GET api/jobs/:id
+// @desc      Get specific job info
+// @access    Private
+router.get(
+  "/:job_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const jobSearch = req.params.job_id;
+    Job.findOne({ user: req.user.id })
+      .then(job => {
+        job.allJobs.forEach(item => {
+          if (item.id === jobSearch) {
+            res.json(item);
+          }
+        });
+      })
+      .catch(err => res.status(404).json(err));
+  }
+);
+
 // @route     POST api/jobs/add
 // @desc      Add job to job route
 // @access    Private
@@ -71,8 +91,8 @@ router.post(
   }
 );
 
-// @route     PUT api/jobs/edit
-// @desc      EDIT job to job route
+// @route     POST api/jobs/edit
+// @desc      Edit job to job route
 // @access    Private
 router.post(
   "/edit/:job_id",

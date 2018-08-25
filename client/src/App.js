@@ -17,6 +17,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateJob from "./components/create-job/CreateJob";
+import EditJob from "./components/create-job/EditJob";
 
 import "./App.css";
 
@@ -57,6 +58,9 @@ class App extends Component {
               </Switch>
               <Switch>
                 <PrivateRoute exact path="/add-job" component={CreateJob} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/edit-job/:id" component={EditJob} />
               </Switch>
             </div>
             <Footer />

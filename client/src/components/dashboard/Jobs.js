@@ -20,6 +20,11 @@ class Jobs extends Component {
         <td>{job.contactEmail}</td>
         <td>{job.contactPhone}</td>
         <td>
+          <Link to={`/edit-job/${job._id}`} className="btn btn-success">
+            Edit
+          </Link>
+        </td>
+        <td>
           <button
             onClick={this.onDelete.bind(this, job._id)}
             className="btn btn-danger"
@@ -46,6 +51,7 @@ class Jobs extends Component {
               <th>Contact Name</th>
               <th>Contact Email</th>
               <th>Contact Phone</th>
+              <th />
               <th />
             </tr>
             {jobs}

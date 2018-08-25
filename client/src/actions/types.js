@@ -5,3 +5,5 @@ export const JOBS_LOADING = "JOBS_LOADING";
 export const JOBS_NOT_FOUND = "JOBS_NOT_FOUND";
 export const CLEAR_CURRENT_JOBS = "CLEAR_CURRENT_JOBS";
 export const ADD_JOB = "ADD_JOB";
+export const EDIT_JOB = "EDIT_JOB";
+export const SPECIFIC_JOB = "SPECIFIC_JOB";

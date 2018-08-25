@@ -4,7 +4,9 @@ import {
   GET_JOBS,
   JOBS_LOADING,
   CLEAR_CURRENT_JOBS,
-  GET_ERRORS
+  GET_ERRORS,
+  EDIT_JOB,
+  SPECIFIC_JOB
 } from "./types";
 
 // Get Jobs
@@ -54,6 +56,31 @@ export const deleteJob = id => dispatch => {
       dispatch({
         type: GET_ERRORS,
         payload: err.response.data
+      })
+    );
+};
+
+// Edit Specific Job
+export const editJob = () => {
+  return {
+    type: EDIT_JOB
+  };
+};
+
+// Get Specific Job
+export const getJob = id => dispatch => {
+  axios
+    .get(`/api/jobs/${id}`)
+    .then(res =>
+      dispatch({
+        type: SPECIFIC_JOB,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: SPECIFIC_JOB,
+        payload: {}
       })
     );
 };
