@@ -4,6 +4,7 @@ import TextFieldGroup from "../common/TextFieldGroup";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { ADD_JOB } from "../../actions/jobActions";
+import classnames from "classnames";
 
 class CreateJob extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class CreateJob extends Component {
 
     this.onSubmit = this.onSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.onHandle = this.onHandle.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -47,6 +49,10 @@ class CreateJob extends Component {
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+  }
+
+  onHandle(e) {
+    this.setState({ status: e.target.value });
   }
 
   render() {
@@ -86,13 +92,6 @@ class CreateJob extends Component {
                   error={errors.location}
                 />
                 <TextFieldGroup
-                  placeholder="* Status"
-                  name="status"
-                  value={this.state.status}
-                  onChange={this.onChange}
-                  error={errors.status}
-                />
-                <TextFieldGroup
                   placeholder="Contact Name"
                   name="contactName"
                   value={this.state.contactName}
@@ -113,6 +112,37 @@ class CreateJob extends Component {
                   onChange={this.onChange}
                   error={errors.contactPhone}
                 />
+                <div>
+                  <select
+                    id="status"
+                    placeholder="Status"
+                    name="status"
+                    value={this.state.status}
+                    onChange={this.onHandle}
+                    error={errors.status}
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.status
+                    })}
+                  >
+                    <option value="" disabled>
+                      * Status
+                    </option>
+                    <option>Applied</option>
+                    <option>Rejected</option>
+                    <option>Phone Interview</option>
+                    <option>Final Interview</option>
+                    <option>Stage 1</option>
+                    <option>Stage 2</option>
+                    <option>Stage 3</option>
+                    <option>Stage 4</option>
+                    <option>Stage 5</option>
+                  </select>
+                  {errors.status && (
+                    <div id="error-text" className="invalid-feedback">
+                      {errors.status}
+                    </div>
+                  )}
+                </div>
                 <input
                   type="submit"
                   value="Submit"

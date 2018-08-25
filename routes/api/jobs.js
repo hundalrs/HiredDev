@@ -54,7 +54,6 @@ router.post(
         contactName: req.body.contactName,
         contactEmail: req.body.contactEmail,
         contactPhone: req.body.contactPhone,
-        offer: req.body.offer,
         location: req.body.location,
         status: req.body.status
       };
@@ -69,6 +68,52 @@ router.post(
 
       job.save().then(job => res.json(job));
     });
+  }
+);
+
+// @route     PUT api/jobs/edit
+// @desc      EDIT job to job route
+// @access    Private
+router.post(
+  "/edit/:job_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validateJobInput(req.body);
+
+    // Check Validation
+    if (!isValid) {
+      // Return any errors with 400 status
+      return res.status(400).json(errors);
+    }
+
+    Job.findOne({ user: req.user.id })
+      .then(job => {
+        // Edit at index
+        const editIndex = job.allJobs
+          .map(item => item.id)
+          .indexOf(req.params.job_id);
+
+        // Splice out of array
+        job.allJobs.splice(editIndex, 1);
+
+        // Create Updated Job
+        const newJob = {
+          company: req.body.company,
+          position: req.body.position,
+          contactName: req.body.contactName,
+          contactEmail: req.body.contactEmail,
+          contactPhone: req.body.contactPhone,
+          location: req.body.location,
+          status: req.body.status
+        };
+
+        // Add to allJobs array
+        job.allJobs.unshift(newJob);
+
+        // Save
+        job.save().then(job => res.json(job));
+      })
+      .catch(err => res.status(404).json(err));
   }
 );
 
