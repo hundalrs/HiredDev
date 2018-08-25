@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { deleteJob } from "../../actions/jobActions";
 
+import "../../styles/jobs.css";
+
 class Jobs extends Component {
   onDelete(id) {
     this.props.deleteJob(id);
@@ -12,13 +14,26 @@ class Jobs extends Component {
   render() {
     const jobs = this.props.myJobs.map(job => (
       <tr key={job._id}>
+        {/* <Link to={{ pathname: `/notes/${job._id}` }}> */}
         <td>{job.company}</td>
+        {/* </Link> */}
         <td>{job.position}</td>
         <td>{job.location}</td>
         <td>{job.status}</td>
         <td>{job.contactName}</td>
         <td>{job.contactEmail}</td>
         <td>{job.contactPhone}</td>
+        <td>
+          <Link
+            to={{
+              pathname: `/notes/${job._id}`,
+              state: { myjobs: this.props.myJobs }
+            }}
+            className="btn btn-info"
+          >
+            Notes
+          </Link>
+        </td>
         <td>
           <Link
             to={{
@@ -42,7 +57,7 @@ class Jobs extends Component {
     ));
 
     return (
-      <div>
+      <div id="widen">
         <h4 className="mb-4">Job Applications</h4>
         <Link to="/add-job" className="btn btn-sm btn-info mb-4">
           Add Job
@@ -57,6 +72,7 @@ class Jobs extends Component {
               <th>Contact Name</th>
               <th>Contact Email</th>
               <th>Contact Phone</th>
+              <th />
               <th />
               <th />
             </tr>

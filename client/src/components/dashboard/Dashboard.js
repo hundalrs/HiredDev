@@ -32,7 +32,7 @@ class Dashboard extends Component {
         // User logged in but has no jobs
         dashboardContent = (
           <div>
-            <p className="lead text-meuted">
+            <p className="lead text-muted">
               Welcome {user.name.slice(0, user.name.indexOf(" "))}
             </p>
             <p>You have not entered any jobs yet</p>
