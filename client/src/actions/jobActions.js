@@ -28,6 +28,7 @@ export const getCurrentJobs = () => dispatch => {
 };
 
 // Get Specific Job
+
 export const getJob = id => dispatch => {
   axios
     .get(`/api/jobs/${id}`)
@@ -46,6 +47,7 @@ export const getJob = id => dispatch => {
 };
 
 // Add Jobs
+
 export const ADD_JOB = (sendData, history) => dispatch => {
   axios
     .post("/api/jobs/add", sendData)
