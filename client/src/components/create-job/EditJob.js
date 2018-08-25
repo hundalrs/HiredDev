@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import TextFieldGroup from "../common/TextFieldGroup";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { editJob, getJob } from "../../actions/jobActions";
+import { editJob } from "../../actions/jobActions";
 import classnames from "classnames";
 
 class EditJob extends Component {
@@ -17,6 +17,7 @@ class EditJob extends Component {
       contactName: "",
       contactEmail: "",
       contactPhone: "",
+      jobID: "",
       errors: {}
     };
 
@@ -26,7 +27,28 @@ class EditJob extends Component {
   }
 
   componentDidMount() {
-    this.props.getJob();
+    const { id } = this.props.match.params;
+    const jobState = this.props.history.location.state.myjobs.filter(job => {
+      if (job._id === id) {
+        return job;
+      }
+    });
+
+    this.setState(
+      {
+        company: jobState[0].company,
+        position: jobState[0].position,
+        location: jobState[0].location,
+        status: jobState[0].status,
+        contactName: jobState[0].contactName,
+        contactEmail: jobState[0].contactEmail,
+        contactPhone: jobState[0].contactPhone,
+        jobID: jobState[0]._id
+      },
+      function() {
+        console.log(this.state);
+      }
+    );
   }
 
   componentWillReceiveProps(nextProps) {
@@ -48,7 +70,7 @@ class EditJob extends Component {
       contactPhone: this.state.contactPhone
     };
 
-    this.props.ADD_JOB(sendData, this.props.history);
+    this.props.editJob(this.state.jobID, sendData, this.props.history);
   }
 
   onChange(e) {
@@ -174,5 +196,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { editJob, getJob }
+  { editJob }
 )(withRouter(EditJob));

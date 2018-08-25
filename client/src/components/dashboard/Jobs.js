@@ -20,7 +20,13 @@ class Jobs extends Component {
         <td>{job.contactEmail}</td>
         <td>{job.contactPhone}</td>
         <td>
-          <Link to={`/edit-job/${job._id}`} className="btn btn-success">
+          <Link
+            to={{
+              pathname: `/edit-job/${job._id}`,
+              state: { myjobs: this.props.myJobs }
+            }}
+            className="btn btn-success"
+          >
             Edit
           </Link>
         </td>

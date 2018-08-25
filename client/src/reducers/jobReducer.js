@@ -2,7 +2,8 @@ import {
   GET_JOBS,
   JOBS_LOADING,
   CLEAR_CURRENT_JOBS,
-  SPECIFIC_JOB
+  SPECIFIC_JOB,
+  EDIT_JOB
 } from "../actions/types";
 
 const initialState = {
@@ -29,6 +30,12 @@ export default function(state = initialState, action) {
         jobs: null
       };
     case SPECIFIC_JOB:
+      return {
+        ...state,
+        jobs: action.payload,
+        loading: false
+      };
+    case EDIT_JOB:
       return {
         ...state,
         jobs: action.payload,

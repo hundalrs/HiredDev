@@ -5,7 +5,6 @@ import {
   JOBS_LOADING,
   CLEAR_CURRENT_JOBS,
   GET_ERRORS,
-  EDIT_JOB,
   SPECIFIC_JOB
 } from "./types";
 
@@ -23,6 +22,24 @@ export const getCurrentJobs = () => dispatch => {
     .catch(err =>
       dispatch({
         type: GET_JOBS,
+        payload: {}
+      })
+    );
+};
+
+// Get Specific Job
+export const getJob = id => dispatch => {
+  axios
+    .get(`/api/jobs/${id}`)
+    .then(res =>
+      dispatch({
+        type: GET_JOBS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: SPECIFIC_JOB,
         payload: {}
       })
     );
@@ -61,26 +78,14 @@ export const deleteJob = id => dispatch => {
 };
 
 // Edit Specific Job
-export const editJob = () => {
-  return {
-    type: EDIT_JOB
-  };
-};
-
-// Get Specific Job
-export const getJob = id => dispatch => {
+export const editJob = (jobID, sendData, history) => dispatch => {
   axios
-    .get(`/api/jobs/${id}`)
-    .then(res =>
-      dispatch({
-        type: SPECIFIC_JOB,
-        payload: res.data
-      })
-    )
+    .post(`/api/jobs/edit/${jobID}`, sendData)
+    .then(res => history.push("/dashboard"))
     .catch(err =>
       dispatch({
-        type: SPECIFIC_JOB,
-        payload: {}
+        type: GET_ERRORS,
+        payload: err.response.data
       })
     );
 };
