@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentJobs } from "../../actions/jobActions";
 import Spinner from "../common/Spinner";
-import "react-table/react-table.css";
+import Jobs from "./Jobs";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -25,20 +25,16 @@ class Dashboard extends Component {
         dashboardContent = (
           <div>
             <br />
-            <h4 className="mb-4">
-              {user.name.slice(0, user.name.indexOf(" "))}
-              's Applications
-            </h4>
-            <Link to="/add-job" className="btn btn-sm btn-info mb-2">
-              Add Job
-            </Link>
+            <Jobs myJobs={jobs.allJobs} />
           </div>
         );
       } else {
         // User logged in but has no jobs
         dashboardContent = (
           <div>
-            <p className="lead text-meuted">Welcome {user.name}</p>
+            <p className="lead text-meuted">
+              Welcome {user.name.slice(0, user.name.indexOf(" "))}
+            </p>
             <p>You have not entered any jobs yet</p>
             <Link to="/add-job" className="btn btn-lg btn-info mb-2">
               Add Job
