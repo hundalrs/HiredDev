@@ -75,7 +75,8 @@ router.post(
         contactEmail: req.body.contactEmail,
         contactPhone: req.body.contactPhone,
         location: req.body.location,
-        status: req.body.status
+        status: req.body.status,
+        notes: req.body.notes
       };
 
       if (!job) {
@@ -124,7 +125,8 @@ router.post(
           contactEmail: req.body.contactEmail,
           contactPhone: req.body.contactPhone,
           location: req.body.location,
-          status: req.body.status
+          status: req.body.status,
+          notes: req.body.notes
         };
 
         // Add to allJobs array

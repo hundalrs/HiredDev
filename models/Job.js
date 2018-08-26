@@ -34,6 +34,9 @@ const JobSchema = new Schema({
       },
       location: {
         type: String
+      },
+      notes: {
+        type: String
       }
     }
   ]

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import TextFieldGroup from "../common/TextFieldGroup";
+import TextArea from "../common/TextArea";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { editJob } from "../../actions/jobActions";
@@ -43,6 +44,7 @@ class EditJob extends Component {
         contactName: jobState[0].contactName,
         contactEmail: jobState[0].contactEmail,
         contactPhone: jobState[0].contactPhone,
+        notes: jobState[0].notes,
         jobID: jobState[0]._id
       },
       function() {
@@ -67,7 +69,8 @@ class EditJob extends Component {
       status: this.state.status,
       contactName: this.state.contactName,
       contactEmail: this.state.contactEmail,
-      contactPhone: this.state.contactPhone
+      contactPhone: this.state.contactPhone,
+      notes: this.state.notes
     };
 
     this.props.editJob(this.state.jobID, sendData, this.props.history);
@@ -137,6 +140,13 @@ class EditJob extends Component {
                   value={this.state.contactPhone}
                   onChange={this.onChange}
                   error={errors.contactPhone}
+                />
+                <TextArea
+                  placeholder="Notes"
+                  name="notes"
+                  value={this.state.notes}
+                  onChange={this.onChange}
+                  error={errors.notes}
                 />
                 <div>
                   <select

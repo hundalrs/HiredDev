@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import TextFieldGroup from "../common/TextFieldGroup";
+import TextFieldArea from "../common/TextArea";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { ADD_JOB } from "../../actions/jobActions";
 import classnames from "classnames";
+import TextArea from "../common/TextArea";
 
 class CreateJob extends Component {
   constructor(props) {
@@ -17,6 +19,7 @@ class CreateJob extends Component {
       contactName: "",
       contactEmail: "",
       contactPhone: "",
+      notes: "",
       errors: {}
     };
 
@@ -41,7 +44,8 @@ class CreateJob extends Component {
       status: this.state.status,
       contactName: this.state.contactName,
       contactEmail: this.state.contactEmail,
-      contactPhone: this.state.contactPhone
+      contactPhone: this.state.contactPhone,
+      notes: this.state.notes
     };
 
     this.props.ADD_JOB(sendData, this.props.history);
@@ -111,6 +115,13 @@ class CreateJob extends Component {
                   value={this.state.contactPhone}
                   onChange={this.onChange}
                   error={errors.contactPhone}
+                />
+                <TextArea
+                  placeholder="Notes"
+                  name="notes"
+                  value={this.state.notes}
+                  onChange={this.onChange}
+                  error={errors.notes}
                 />
                 <div>
                   <select
