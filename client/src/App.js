@@ -18,6 +18,7 @@ import Login from "./components/auth/Login";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateJob from "./components/create-job/CreateJob";
 import EditJob from "./components/create-job/EditJob";
+import Notes from "./components/notes/Notes";
 
 import "./App.css";
 
@@ -61,6 +62,9 @@ class App extends Component {
               </Switch>
               <Switch>
                 <PrivateRoute exact path="/edit-job/:id" component={EditJob} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/notes/:id" component={Notes} />
               </Switch>
             </div>
             <Footer />
