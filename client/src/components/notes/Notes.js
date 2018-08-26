@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import "../../styles/notes.css";
-
 class Notes extends Component {
   constructor(props) {
     super(props);
@@ -70,12 +68,8 @@ class Notes extends Component {
   }
 }
 
-Notes.propTypes = {
-  name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
-  value: PropTypes.string.isRequired,
-  error: PropTypes.string,
-  jobs: PropTypes.object.isRequired
+Notes.proptypes = {
+  myjobs: PropTypes.object.isRequired
 };
 
 export default Notes;
