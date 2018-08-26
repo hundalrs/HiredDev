@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 class Notes extends Component {
@@ -9,8 +9,7 @@ class Notes extends Component {
       notes: "",
       jobID: "",
       position: "",
-      company: "",
-      errors: {}
+      company: ""
     };
 
     this.onChange = this.onChange.bind(this);
@@ -48,8 +47,6 @@ class Notes extends Component {
   }
 
   render() {
-    const { errors } = this.state;
-
     return (
       <div className="add-job">
         <div className="container">
