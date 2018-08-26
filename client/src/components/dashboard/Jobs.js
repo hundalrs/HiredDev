@@ -16,9 +16,7 @@ class Jobs extends Component {
   render() {
     const jobs = this.props.myJobs.map(job => (
       <tr key={job._id}>
-        {/* <Link to={{ pathname: `/notes/${job._id}` }}> */}
         <td>{job.company}</td>
-        {/* </Link> */}
         <td>{job.position}</td>
         <td>{job.location}</td>
         <td>{job.status}</td>
