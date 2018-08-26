@@ -8,6 +8,8 @@ class Notes extends Component {
     this.state = {
       notes: "",
       jobID: "",
+      position: "",
+      company: "",
       errors: {}
     };
 
@@ -25,6 +27,8 @@ class Notes extends Component {
     this.setState(
       {
         notes: jobState[0].notes,
+        position: jobState[0].position,
+        company: jobState[0].company,
         jobID: jobState[0]._id
       },
       function() {
@@ -55,7 +59,9 @@ class Notes extends Component {
                 Go Back
               </Link>
               <div className="mt-4">
-                <h1 className="display-4 text-center mb-4">Notes</h1>
+                <h1 className="display-4 text-center mb-5">
+                  Notes for {this.state.position} at {this.state.company}
+                </h1>
               </div>
               <p className="box">
                 <pre>{this.state.notes}</pre>
