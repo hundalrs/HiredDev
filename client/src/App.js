@@ -19,7 +19,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import CreateJob from "./components/create-job/CreateJob";
 import EditJob from "./components/create-job/EditJob";
 import Notes from "./components/notes/Notes";
-import NoMatch from "./components/common/NoMatch";
+//import NoMatch from "./components/common/NoMatch";
 
 import "./App.css";
 
@@ -67,9 +67,9 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/notes/:id" component={Notes} />
               </Switch>
-              <Switch>
+              {/* <Switch>
                 <Route component={NoMatch} />
-              </Switch>
+              </Switch> */}
             </div>
             <Footer />
           </div>
