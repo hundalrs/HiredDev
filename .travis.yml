@@ -1,0 +1,20 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t hundalrs/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run hundalrs/react-test npm test -- --coverage
+
+after_success:
+  - docker build -t hundalrs/multi-client ./client
+  - docker build -t hundalrs/multi-nginx ./nginx
+  - docker build -t hundalrs/multi-server .
+  # Log in to docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # push images to docker hub
+  - docker push hundalrs/multi-client
+  - docker push hundalrs/multi-nginx
+  - docker push hundalrs/multi-server
