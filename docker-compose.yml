@@ -1,0 +1,28 @@
+version: "3"
+services:
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - "3050:80"
+  api:
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    environment:
+      - MONGO_HOST
+      - SECRET
+    volumes:
+      - /app/node_modules
+      - .:/app
+  client:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    environment:
+      - DANGEROUSLY_DISABLE_HOST_CHECK=true
+    volumes:
+      - /app/node_modules
+      - ./client:/app
