@@ -8,7 +8,8 @@ before_install:
 #script:
 #  - docker run hundalrs/react-test npm test -- --coverage
 
-after_success:
+#after_success:
+script:
   - docker build -t hundalrs/multi-client ./client
   - docker build -t hundalrs/multi-nginx ./nginx
   - docker build -t hundalrs/multi-server .
