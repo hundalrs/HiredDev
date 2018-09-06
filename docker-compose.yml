@@ -10,13 +10,13 @@ services:
   api:
     build:
       dockerfile: Dockerfile.dev
-      context: .
+      context: ./server
     environment:
       - MONGO_HOST
       - SECRET
     volumes:
       - /app/node_modules
-      - .:/app
+      - ./server:/app
   client:
     build:
       dockerfile: Dockerfile.dev

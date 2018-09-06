@@ -12,7 +12,7 @@ before_install:
 script:
   - docker build -t hundalrs/multi-client ./client
   - docker build -t hundalrs/multi-nginx ./nginx
-  - docker build -t hundalrs/multi-server .
+  - docker build -t hundalrs/multi-server ./server
   # Log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # push images to docker hub
