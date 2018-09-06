@@ -19,3 +19,16 @@ script:
   - docker push hundalrs/multi-client
   - docker push hundalrs/multi-nginx
   - docker push hundalrs/multi-server
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: HiredDev
+  env: Hireddev-env
+  bucket_name: elasticbeanstalk-us-east-2-384630562796
+  bucket_path: HiredDev
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
