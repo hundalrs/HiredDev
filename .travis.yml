@@ -2,13 +2,6 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build -t hundalrs/react-test -f ./client/Dockerfile.dev ./client
-
-#script:
-#  - docker run hundalrs/react-test npm test -- --coverage
-
-#after_success:
 script:
   - docker build -t hundalrs/multi-client ./client
   - docker build -t hundalrs/multi-nginx ./nginx
