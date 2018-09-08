@@ -60,9 +60,7 @@ class Notes extends Component {
                   Notes for {this.state.position} at {this.state.company}
                 </h1>
               </div>
-              <p className="box">
-                <pre>{this.state.notes}</pre>
-              </p>
+              <p className="box">{this.state.notes}</p>
             </div>
           </div>
         </div>
