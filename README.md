@@ -16,7 +16,7 @@ Note: you have to give values to the environmental variables in order for this p
 
 ## Finished Features
 
-* Set up CI/CD pipeline for easy deployment using Github, Travis CI, Docker Hub, and AWS Beanstalk
+* CI/CD pipeline for easy deployment using Github, Travis CI, Docker Hub, and AWS Beanstalk
 * User login/sign up
 * Private routes inaccessible to users without proper credentials (bearer token)
 * Ability to add jobs to dashboard
