@@ -19,7 +19,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import CreateJob from "./components/create-job/CreateJob";
 import EditJob from "./components/create-job/EditJob";
 import Notes from "./components/notes/Notes";
-//import NoMatch from "./components/common/NoMatch";
+import NoMatch from "./components/common/NoMatch";
 
 import "./App.css";
 
@@ -53,23 +53,15 @@ class App extends Component {
             <Navbar />
             <Route exact path="/" component={Landing} />
             <div className="container">
-              <Route exact path="/signup" component={Register} />
-              <Route exact path="/login" component={Login} />
               <Switch>
+                <Route exact path="/signup" component={Register} />
+                <Route exact path="/login" component={Login} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              </Switch>
-              <Switch>
                 <PrivateRoute exact path="/add-job" component={CreateJob} />
-              </Switch>
-              <Switch>
                 <PrivateRoute exact path="/edit-job/:id" component={EditJob} />
-              </Switch>
-              <Switch>
                 <PrivateRoute exact path="/notes/:id" component={Notes} />
-              </Switch>
-              {/* <Switch>
                 <Route component={NoMatch} />
-              </Switch> */}
+              </Switch>
             </div>
             <Footer />
           </div>
