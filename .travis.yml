@@ -19,7 +19,7 @@ deploy:
   app: HiredDev
   env: Hireddev-env-2
   bucket_name: elasticbeanstalk-us-east-2-384630562796
-  bucket_path: HiredDev
+  bucket_path: HiredDev-2
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
