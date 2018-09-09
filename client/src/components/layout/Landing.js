@@ -22,7 +22,7 @@ class Landing extends Component {
           <br />
           <br />
           <br />
-          <h5 className="margin-to-button">Get Organized Now!</h5>
+          <h5 className="margin-to-button">Organize your job search now!</h5>
           <Link to="/signup" className="btn btn-lg btn-info mt-5 mr-2">
             Sign Up
           </Link>
