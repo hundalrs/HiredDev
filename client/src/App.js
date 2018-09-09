@@ -51,9 +51,9 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            <Switch>
-              <Route exact path="/" component={Landing} />
-              <div className="container">
+            <div className="container">
+              <Switch>
+                <Route exact path="/" component={Landing} />
                 <Route exact path="/signup" component={Register} />
                 <Route exact path="/login" component={Login} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
@@ -61,8 +61,8 @@ class App extends Component {
                 <PrivateRoute exact path="/edit-job/:id" component={EditJob} />
                 <PrivateRoute exact path="/notes/:id" component={Notes} />
                 <Route component={NoMatch} />
-              </div>
-            </Switch>
+              </Switch>
+            </div>
             <Footer />
           </div>
         </Router>
