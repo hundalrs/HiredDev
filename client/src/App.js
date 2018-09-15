@@ -39,8 +39,8 @@ if (localStorage.jwtToken) {
     store.dispatch(logoutUser());
     // Clear jobs
     store.dispatch(clearJobs());
-    // Redirect to login
-    window.location.href = "/login";
+    // Redirect to landing
+    window.location.href = "/";
   }
 }
 
@@ -65,8 +65,6 @@ class App extends Component {
             <div>
               <Switch>
                 <Route exact path="/" component={Landing} />
-                <Route exact path="/signup" component={Register} />
-                <Route exact path="/login" component={Login} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/add-job" component={CreateJob} />
                 <PrivateRoute exact path="/edit-job/:id" component={EditJob} />

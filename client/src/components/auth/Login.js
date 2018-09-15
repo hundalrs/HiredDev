@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
@@ -54,7 +55,7 @@ class Login extends Component {
     return (
       <div className="login">
         <div className="container-full-bg">
-          <div className="jumbotron">
+          <div>
             <div className="row">
               <div className="col-md-8 m-auto">
                 <h1 className="display-4 text-center">Log In</h1>
@@ -106,4 +107,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { loginUser }
-)(Login);
+)(withRouter(Login));

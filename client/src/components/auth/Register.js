@@ -40,6 +40,8 @@ class Register extends Component {
   onSubmit(e) {
     e.preventDefault();
 
+    this.setState({ errors: "" });
+
     const newUser = {
       name: this.state.name,
       email: this.state.email,
@@ -48,6 +50,12 @@ class Register extends Component {
     };
 
     this.props.registerUser(newUser, this.props.history);
+
+    setTimeout(() => {
+      if (Object.keys(this.state.errors).length === 0) {
+        this.props.signup();
+      }
+    }, 1500);
   }
 
   render() {
@@ -59,7 +67,7 @@ class Register extends Component {
       <div className="register">
         {user ? user.name : null}
         <div className="container-full-bg">
-          <div className="jumbotron">
+          <div className>
             <div className="row">
               <div className="col-md-8 m-auto">
                 <h1 className="display-4 text-center">Sign Up</h1>
