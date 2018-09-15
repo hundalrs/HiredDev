@@ -50,8 +50,19 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Navbar />
-            <div className="container">
+            <Route
+              exact
+              path={[
+                "/login",
+                "/signup",
+                "/dashboard",
+                "/add-job",
+                "/edit-job",
+                "/notes"
+              ]}
+              component={Navbar}
+            />
+            <div>
               <Switch>
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/signup" component={Register} />
@@ -63,7 +74,18 @@ class App extends Component {
                 <Route component={NoMatch} />
               </Switch>
             </div>
-            <Footer />
+            <Route
+              exact
+              path={[
+                "login",
+                "signup",
+                "dashboard",
+                "add-job",
+                "edit-job:id",
+                "notes/:id"
+              ]}
+              component={Footer}
+            />
           </div>
         </Router>
       </Provider>

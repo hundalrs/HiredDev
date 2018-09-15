@@ -14,22 +14,34 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className="container-full-bg">
-        <div className="jumbotron text-center">
-          <h1 className="main-text display-4 text-center">
-            Your Job Search Done Your Way
-          </h1>
-          <br />
-          <br />
-          <br />
-          <h5 className="margin-to-button">Organize your job search now!</h5>
-          <Link to="/signup" className="btn btn-lg btn-info mt-5 mr-2">
+      <div className="outer">
+        <header className="header">
+          <div class="text-box">
+            <h1 className="heading-primary">
+              <span class="heading-primary-main">HiredDev</span>
+              <span class="heading-primary-sub">
+                Your tool for the job search
+              </span>
+            </h1>
+            <br />
+            <br />
+            <br />
+          </div>
+          <Link
+            to="/login"
+            className="login-link"
+            style={{ textDecoration: "none" }}
+          >
+            Log In
+          </Link>
+          <Link
+            to="/signup"
+            className="signup-link"
+            style={{ textDecoration: "none" }}
+          >
             Sign Up
           </Link>
-          <Link to="/login" className="btn btn-lg btn-info mt-5">
-            Login
-          </Link>
-        </div>
+        </header>
       </div>
     );
   }
