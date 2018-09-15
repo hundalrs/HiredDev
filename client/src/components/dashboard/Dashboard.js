@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { getCurrentJobs } from "../../actions/jobActions";
 import Spinner from "../common/Spinner";
 import Jobs from "./Jobs";
+import "../../styles/dashboard.css";
 
 class Dashboard extends Component {
   componentDidMount() {
