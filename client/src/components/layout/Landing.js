@@ -44,9 +44,7 @@ class Landing extends Component {
   }
 
   render() {
-    const { errors, signup, login } = this.state;
-
-    const { user } = this.props.auth;
+    const { signup, login } = this.state;
 
     let modal;
 
