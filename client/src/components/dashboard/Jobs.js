@@ -7,13 +7,76 @@ import { deleteJob } from "../../actions/jobActions";
 import "../../styles/jobs.css";
 
 class Jobs extends Component {
+  constructor() {
+    super();
+    this.state = {
+      deletion: false,
+      confirm: false,
+      modal_show: false
+    };
+    this.onDeleteClose = this.onDeleteClose.bind(this);
+    this.onConfirm = this.onConfirm.bind(this);
+  }
+
   onDelete(id) {
-    if (window.confirm("Are you sure you wish to delete this item?")) {
-      this.props.deleteJob(id);
-    }
+    this.setState({ deletion: true });
+    this.setState({ modal_show: true });
+
+    setTimeout(() => {
+      if (this.state.confirm === true) {
+        this.setState({ modal_show: false });
+      }
+    }, 700);
+
+    setTimeout(() => {
+      if (this.state.confirm === true) {
+        this.props.deleteJob(id);
+        this.setState({ confirm: false });
+        this.setState({ deletion: false });
+      }
+    }, 2000);
+  }
+
+  onConfirm(id) {
+    this.setState({ confirm: true });
+  }
+
+  onDeleteClose(e) {
+    this.setState({ deletion: false });
   }
 
   render() {
+    const { deletion, modal_show } = this.state;
+
+    let modal;
+
+    if (deletion === true) {
+      if (modal_show === true) {
+        modal = (
+          <div className="bg-modal-delete">
+            <div className="modal-content-delete">
+              <div className="close" onClick={this.onDeleteClose}>
+                +
+              </div>
+              <h2>Are you sure you would like to delete this job?</h2>
+              <btn
+                className="btn mr-4 mt-4 btn-danger"
+                onClick={this.onConfirm}
+              >
+                Yes
+              </btn>
+              <btn
+                className="btn mt-4 btn-success"
+                onClick={this.onDeleteClose}
+              >
+                No
+              </btn>
+            </div>
+          </div>
+        );
+      }
+    }
+
     const jobs = this.props.myJobs.map(job => (
       <tr key={job._id}>
         <td>{job.company}</td>
@@ -79,6 +142,7 @@ class Jobs extends Component {
             {jobs}
           </thead>
         </table>
+        {modal}
       </div>
     );
   }
