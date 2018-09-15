@@ -12,13 +12,16 @@ class Landing extends Component {
     super();
     this.state = {
       signup: false,
-      login: false
+      login: false,
+      about: false
     };
 
     this.onSignup = this.onSignup.bind(this);
     this.onSignupClose = this.onSignupClose.bind(this);
     this.onLogin = this.onLogin.bind(this);
     this.onLoginClose = this.onLoginClose.bind(this);
+    this.onAbout = this.onAbout.bind(this);
+    this.onAboutClose = this.onAboutClose.bind(this);
   }
 
   onSignup(e) {
@@ -37,6 +40,14 @@ class Landing extends Component {
     this.setState({ login: false });
   }
 
+  onAbout(e) {
+    this.setState({ about: true });
+  }
+
+  onAboutClose(e) {
+    this.setState({ about: false });
+  }
+
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
@@ -44,7 +55,7 @@ class Landing extends Component {
   }
 
   render() {
-    const { signup, login } = this.state;
+    const { signup, login, about } = this.state;
 
     let modal;
 
@@ -70,6 +81,24 @@ class Landing extends Component {
           </div>
         </div>
       );
+    } else if (about === true) {
+      modal = (
+        <div className="bg-modal">
+          <div className="modal-content-about">
+            <div className="close" onClick={this.onAboutClose}>
+              +
+            </div>
+            <h1 style={{ color: "black" }}>About HiredDev</h1>
+            <h6 className="about">
+              HiredDev is a tool for user's to organize their job search by
+              tracking their applications and interviews. Often, people apply to
+              many jobs as developers, and HiredDev offers to alleviate that
+              stress with a secure dashboard that will store your status and
+              notes on any jobs you apply to.
+            </h6>
+          </div>
+        </div>
+      );
     }
 
     return (
@@ -82,13 +111,16 @@ class Landing extends Component {
                 Your tool for the job search
               </span>
             </h1>
+            <Link to="/" className="btn btn-white" onClick={this.onAbout}>
+              About HiredDev
+            </Link>
             <br />
             <br />
             <br />
           </div>
           <Link
             to="/"
-            className="login-link"
+            className="login-link btn-landing btn-login"
             onClick={this.onLogin}
             style={{ textDecoration: "none" }}
           >
@@ -96,7 +128,7 @@ class Landing extends Component {
           </Link>
           <Link
             to="/"
-            className="signup-link"
+            className="signup-link btn-landing btn-signup"
             onClick={this.onSignup}
             style={{ textDecoration: "none" }}
           >

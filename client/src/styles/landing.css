@@ -41,6 +41,7 @@
   text-transform: uppercase;
 
   backface-visibility: hidden;
+  margin-bottom: 80px;
 }
 
 .heading-primary-main {
@@ -60,6 +61,7 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary-sub {
@@ -127,6 +129,18 @@
   position: relative;
 }
 
+.modal-content-about {
+  width: 500px;
+  height: 200px;
+  background-color: white;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px;
+  top: -50px;
+  position: relative;
+  overflow: auto;
+}
+
 .close {
   position: absolute;
   top: 0;
@@ -138,6 +152,45 @@
   &:hover {
     color: #666;
   }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 30px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  color: #777;
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn-landing:hover {
+  border-bottom: 2px solid #fff;
+  color: white;
+}
+
+.btn-landing:link,
+.btn-landing:visited {
+  text-decoration: none;
+  padding: 10px;
+  padding-bottom: 15px;
+  font: times;
+  font-size: 16px;
 }
 
 @keyframes moveInLeft {
