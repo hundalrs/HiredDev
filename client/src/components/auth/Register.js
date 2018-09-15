@@ -53,7 +53,7 @@ class Register extends Component {
 
     setTimeout(() => {
       if (Object.keys(this.state.errors).length === 0) {
-        this.props.signup();
+        this.props.signupAndClose();
       }
     }, 1500);
   }

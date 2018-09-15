@@ -18,6 +18,7 @@ class Landing extends Component {
 
     this.onSignup = this.onSignup.bind(this);
     this.onSignupClose = this.onSignupClose.bind(this);
+    this.onSignupCloseAndLogin = this.onSignupCloseAndLogin.bind(this);
     this.onLogin = this.onLogin.bind(this);
     this.onLoginClose = this.onLoginClose.bind(this);
     this.onAbout = this.onAbout.bind(this);
@@ -30,6 +31,13 @@ class Landing extends Component {
 
   onSignupClose(e) {
     this.setState({ signup: false });
+  }
+
+  onSignupCloseAndLogin(e) {
+    this.setState({ signup: false });
+    setTimeout(() => {
+      this.setState({ login: true });
+    }, 700);
   }
 
   onLogin(e) {
@@ -66,7 +74,7 @@ class Landing extends Component {
             <div className="close" onClick={this.onSignupClose}>
               +
             </div>
-            <Register signup={this.onSignupClose} />
+            <Register signupAndClose={this.onSignupCloseAndLogin} />
           </div>
         </div>
       );
