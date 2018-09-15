@@ -11,7 +11,8 @@ class Jobs extends Component {
     super();
     this.state = {
       deletion: false,
-      confirm: false
+      confirm: false,
+      modal_show: false
     };
     this.onDeleteClose = this.onDeleteClose.bind(this);
     this.onConfirm = this.onConfirm.bind(this);
@@ -19,6 +20,13 @@ class Jobs extends Component {
 
   onDelete(id) {
     this.setState({ deletion: true });
+    this.setState({ modal_show: true });
+
+    setTimeout(() => {
+      if (this.state.confirm === true) {
+        this.setState({ modal_show: false });
+      }
+    }, 700);
 
     setTimeout(() => {
       if (this.state.confirm === true) {
@@ -38,27 +46,35 @@ class Jobs extends Component {
   }
 
   render() {
-    const { deletion } = this.state;
+    const { deletion, modal_show } = this.state;
 
     let modal;
 
     if (deletion === true) {
-      modal = (
-        <div className="bg-modal-delete">
-          <div className="modal-content-delete">
-            <div className="close" onClick={this.onDeleteClose}>
-              +
+      if (modal_show === true) {
+        modal = (
+          <div className="bg-modal-delete">
+            <div className="modal-content-delete">
+              <div className="close" onClick={this.onDeleteClose}>
+                +
+              </div>
+              <h2>Are you sure you would like to delete this job?</h2>
+              <btn
+                className="btn mr-4 mt-4 btn-danger"
+                onClick={this.onConfirm}
+              >
+                Yes
+              </btn>
+              <btn
+                className="btn mt-4 btn-success"
+                onClick={this.onDeleteClose}
+              >
+                No
+              </btn>
             </div>
-            <h2>Are you sure you would like to delete this job?</h2>
-            <btn className="btn mr-4 mt-4 btn-danger" onClick={this.onConfirm}>
-              Yes
-            </btn>
-            <btn className="btn mt-4 btn-success" onClick={this.onDeleteClose}>
-              No
-            </btn>
           </div>
-        </div>
-      );
+        );
+      }
     }
 
     const jobs = this.props.myJobs.map(job => (
