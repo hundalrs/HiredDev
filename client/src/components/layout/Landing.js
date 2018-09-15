@@ -90,11 +90,11 @@ class Landing extends Component {
             </div>
             <h1 style={{ color: "black" }}>About HiredDev</h1>
             <h6 className="about">
-              HiredDev is a tool for user's to organize their job search by
-              tracking their applications and interviews. Often, people apply to
-              many jobs as developers, and HiredDev offers to alleviate that
-              stress with a secure dashboard that will store your status and
-              notes on any jobs you apply to.
+              HiredDev is a tool for developers to organize their job search by
+              tracking their applications and interviews. Often, devs apply to
+              many jobs, and HiredDev offers to alleviate that stress with a
+              secure dashboard that will store your status and notes on any jobs
+              you apply to.
             </h6>
           </div>
         </div>
