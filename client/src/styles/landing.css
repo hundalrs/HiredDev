@@ -17,6 +17,7 @@
 
 .outer {
   height: 100vh;
+  overflow: hidden;
   background-color: #17a2b8;
   background-size: cover;
   background-position: top;
@@ -185,7 +186,6 @@
 .btn-about:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  color: #777;
 }
 
 .btn-about:active {
