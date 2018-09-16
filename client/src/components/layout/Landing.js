@@ -6,6 +6,7 @@ import Register from "../auth/Register";
 import Login from "../auth/Login";
 
 import "../../styles/landing.css";
+import "../../styles/custom-landing.css";
 
 class Landing extends Component {
   constructor() {
@@ -112,14 +113,21 @@ class Landing extends Component {
     return (
       <div className="outer">
         <header className="header">
-          <div class="text-box">
+          <div className="bg-modal-pic">
+            <div className="modal-content-pic">
+              <div className="landing-img">
+                <img src="../../img/dashboard-main.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div className="text-box">
             <h1 className="heading-primary">
-              <span class="heading-primary-main">HiredDev</span>
-              <span class="heading-primary-sub">
+              <span className="heading-primary-main">HiredDev</span>
+              <span className="heading-primary-sub">
                 Your tool for the job search
               </span>
             </h1>
-            <Link to="/" className="btn btn-white" onClick={this.onAbout}>
+            <Link to="/" className="btn-about btn-white" onClick={this.onAbout}>
               About HiredDev
             </Link>
             <br />
@@ -128,7 +136,7 @@ class Landing extends Component {
           </div>
           <Link
             to="/"
-            className="login-link btn-landing btn-login"
+            className="login-link btn-landing btn-login un"
             onClick={this.onLogin}
             style={{ textDecoration: "none" }}
           >
@@ -136,7 +144,7 @@ class Landing extends Component {
           </Link>
           <Link
             to="/"
-            className="signup-link btn-landing btn-signup"
+            className="signup-link btn-landing btn-signup un"
             onClick={this.onSignup}
             style={{ textDecoration: "none" }}
           >

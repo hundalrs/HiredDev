@@ -4,6 +4,7 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { clearJobs } from "./actions/jobActions";
+import PropTypes from "prop-types";
 
 import { Provider } from "react-redux";
 import store from "./store";
@@ -11,7 +12,7 @@ import store from "./store";
 import PrivateRoute from "./components/common/PrivateRoute";
 
 import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/Footer";
+// import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateJob from "./components/create-job/CreateJob";
@@ -70,23 +71,35 @@ class App extends Component {
                 <Route component={NoMatch} />
               </Switch>
             </div>
-            <Route
+            {/* <Route
               exact
-              path={[
-                "login",
+              path={
+                ("login",
                 "signup",
                 "dashboard",
                 "add-job",
                 "edit-job:id",
-                "notes/:id"
-              ]}
+                "notes/:id")
+              }
               component={Footer}
-            />
+            /> */}
           </div>
         </Router>
       </Provider>
     );
   }
 }
+
+Route.propTypes = {
+  computedMatch: PropTypes.object,
+  path: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+  exact: PropTypes.bool,
+  strict: PropTypes.bool,
+  sensitive: PropTypes.bool,
+  component: PropTypes.func,
+  render: PropTypes.func,
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  location: PropTypes.object
+};
 
 export default App;
