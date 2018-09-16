@@ -5,11 +5,23 @@
 /* Large Devices */
 @media (min-width: 1200px) {
   /* this works */
+  .mobile {
+    display: none;
+  }
 }
 
 /* Medium Devices */
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* work on this */
+  .modal-content-about {
+    width: 600px;
+    height: 250px;
+  }
+  .about {
+    font-size: 30px;
+  }
+  .mobile {
+    display: none;
+  }
 }
 
 /* Small Devices */
