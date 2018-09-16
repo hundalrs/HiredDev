@@ -139,7 +139,7 @@
 .bg-modal-pic {
   width: 50%;
   height: 50%;
-  background-color: rgba(0, 0, 0, 0.00001);
+  background-color: rgba(0, 0, 0, 0);
   position: absolute;
   top: 10%;
   justify-content: center;
@@ -153,6 +153,7 @@
   height: 1000px;
   background-repeat: no-repeat;
   background-image: url("../img/dashboard-main.png");
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   top: 130%;
   right: -95%;
   position: relative;
@@ -218,7 +219,6 @@
 }
 
 .btn-landing:hover {
-  /* border-bottom: 2px solid #fff; */
   color: white;
 }
 
