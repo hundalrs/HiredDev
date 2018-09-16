@@ -1,275 +1,66 @@
-@media screen and (max-width: 1400px) and (min-width: 1210px) {
-  .modal-content-pic {
-    top: 140%;
-  }
+/*========================================
+            Width Queries
+=========================================*/
+
+/* Large Devices */
+@media (min-width: 1200px) {
+  /* this works */
 }
 
-@media screen and (max-width: 1209px) and (min-width: 1028px) {
-  .modal-content-pic {
-    top: 150%;
-  }
-  .heading-primary-main {
-    font-size: 30px;
-  }
-  .heading-primary-sub {
-    font-size: 10px;
-  }
+/* Medium Devices */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* work on this */
 }
 
-@media screen and (max-width: 1028px) and (min-width: 946px) {
-  .modal-content-pic {
-    top: 155%;
-  }
-  .heading-primary-main {
-    font-size: 30px;
-  }
-  .heading-primary-sub {
-    font-size: 10px;
-  }
-  .btn-about:link,
-  .btn-about:visited {
-    font-size: 12px;
-    padding: 12px 25px;
-  }
-}
-
-@media screen and (max-width: 945px) and (min-width: 907px) {
-  .modal-content-pic {
-    top: 160%;
-  }
-  .heading-primary-main {
-    font-size: 30px;
-  }
-  .heading-primary-sub {
-    font-size: 8px;
-  }
-  .btn-about:link,
-  .btn-about:visited {
-    font-size: 12px;
-    padding: 12px 25px;
-  }
-}
-
-@media screen and (max-width: 906px) and (min-width: 740px) {
-  .outer {
-    text-align: center;
-  }
-  .modal-content-pic {
-    top: 165%;
-  }
-  .heading-primary-main {
-    font-size: 30px;
-  }
-  .heading-primary-sub {
-    font-size: 7px;
-  }
-  .btn-about:link,
-  .btn-about:visited {
-    font-size: 12px;
-    padding: 12px 25px;
-  }
-  .login-link {
-    font-size: 12px;
-  }
-  .signup-link {
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 906px) and (min-width: 740px) {
-  .outer {
-    text-align: center;
-  }
-  .modal-content-pic {
-    top: 165%;
-  }
-  .heading-primary-main {
-    font-size: 30px;
-  }
-  .heading-primary-sub {
-    font-size: 7px;
-    letter-spacing: 3px;
-  }
-  .btn-about:link,
-  .btn-about:visited {
-    font-size: 12px;
-    padding: 12px 25px;
-  }
-
-  .signup-link {
-    left: 75%;
-    font-size: 12px;
-  }
-  .login-link {
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 739px) and (min-width: 694px) {
-  .modal-content-pic {
-    top: 170%;
-  }
-  .heading-primary-main {
-    font-size: 30px;
-    letter-spacing: 2px;
-  }
-  .heading-primary-sub {
-    font-size: 7px;
-    letter-spacing: 2px;
-  }
-  .btn-about:link,
-  .btn-about:visited {
-    font-size: 12px;
-    padding: 12px 25px;
-  }
-
-  .signup-link {
-    left: 75%;
-  }
-  .login-link {
-    font-size: 12px;
-  }
-
-  .text-box {
-    width: 50%;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 693px) and (min-width: 550px) {
-  .modal-content-pic {
-    top: 175%;
-  }
-  .heading-primary-main {
-    font-size: 30px;
-    letter-spacing: 2px;
-  }
-  .heading-primary-sub {
-    font-size: 7px;
-    letter-spacing: 2px;
-  }
-  .btn-about:link,
-  .btn-about:visited {
-    font-size: 12px;
-    padding: 12px 25px;
-  }
-
-  .text-box {
-    width: 50%;
-    margin: 0 auto;
-  }
-
-  .signup-link {
-    left: 75%;
-    font-size: 12px;
-  }
-  .login-link {
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 693px) {
-  .modal-content-pic {
+/* Small Devices */
+@media (min-width: 760px) and (max-width: 991px) {
+  .desktop {
     display: none;
-    position: static;
-    width: 0px;
-    height: 0px;
   }
 
-  .bg-modal-pic {
+  .signup-link {
+    left: 70%;
+  }
+
+  .outer {
+    clip-path: none;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 767px) {
+  .desktop {
     display: none;
-    position: static;
-    width: 0.1%;
-    height: 0.1%;
-  }
-
-  .text-box {
-    top: 35%;
-    right: 20%;
-    width: 50%;
-    margin: 0 auto;
-  }
-
-  .heading-primary-main {
-    font-size: 20px;
-    letter-spacing: 2px;
-  }
-  .heading-primary-sub {
-    font-size: 6px;
-    letter-spacing: 2px;
-  }
-  .btn-about:link,
-  .btn-about:visited {
-    font-size: 12px;
-    padding: 12px 25px;
   }
 
   .signup-link {
     left: 60%;
-    font-size: 12px;
   }
 
   .login-link {
-    font-size: 12px;
+    left: 80%;
+  }
+
+  .outer {
+    clip-path: none;
   }
 }
 
-@media screen and (max-height: 900px) and (min-height: 819px) {
+/*======================================
+            Height Queries
+========================================*/
+
+@media (min-height: 610px) and (max-height: 770px) and (min-width: 992px) {
   .modal-content-pic {
     top: 175%;
   }
 }
 
-@media screen and (max-height: 820px) and (min-height: 750px) {
-  .modal-content-pic {
-    top: 185%;
+@media (max-height: 604px) {
+  .desktop {
+    display: none;
   }
-}
-
-@media screen and (max-height: 749px) and (min-height: 655px) {
-  .modal-content-pic {
-    top: 205%;
-  }
-  .heading-primary-main {
-    font-size: 30px;
-  }
-  .heading-primary-sub {
-    font-size: 10px;
-  }
-}
-
-@media screen and (max-height: 654px) and (min-height: 500px) {
-  .modal-content-pic {
-    top: 215%;
-  }
-  .heading-primary-main {
-    font-size: 30px;
-  }
-  .heading-primary-sub {
-    font-size: 10px;
-  }
-}
-
-@media screen and (max-height: 499px) and (min-height: 400px) {
-  .modal-content-pic {
-    top: 245%;
-  }
-  .heading-primary-main {
-    font-size: 30px;
-  }
-  .heading-primary-sub {
-    font-size: 10px;
-  }
-}
-
-@media screen and (max-height: 399px) and (min-height: 300px) {
-  .modal-content-pic {
-    top: 280%;
-  }
-  .heading-primary-main {
-    font-size: 30px;
-  }
-  .heading-primary-sub {
-    font-size: 10px;
+  .outer {
+    clip-path: none;
   }
 }
