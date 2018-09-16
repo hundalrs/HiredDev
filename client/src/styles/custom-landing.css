@@ -32,6 +32,14 @@
   .heading-primary-sub {
     font-size: 16px;
   }
+
+  .modal-content-about {
+    width: 600px;
+    height: 250px;
+  }
+  .about {
+    font-size: 20px;
+  }
 }
 
 /* Extra Small Devices */
