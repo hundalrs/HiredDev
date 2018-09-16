@@ -17,7 +17,7 @@
     height: 250px;
   }
   .about {
-    font-size: 30px;
+    font-size: 23px;
   }
   .mobile {
     display: none;
@@ -47,7 +47,7 @@
 
   .modal-content-about {
     width: 600px;
-    height: 250px;
+    height: 230px;
   }
   .about {
     font-size: 20px;
