@@ -25,6 +25,13 @@
   .outer {
     clip-path: none;
   }
+
+  .heading-primary-main {
+    font-size: 40px;
+  }
+  .heading-primary-sub {
+    font-size: 16px;
+  }
 }
 
 /* Extra Small Devices */
@@ -43,6 +50,13 @@
 
   .outer {
     clip-path: none;
+  }
+
+  .heading-primary-main {
+    font-size: 26px;
+  }
+  .heading-primary-sub {
+    font-size: 10px;
   }
 }
 
