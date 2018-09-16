@@ -8,6 +8,13 @@
   .mobile {
     display: none;
   }
+  .modal-content-about {
+    width: 600px;
+    height: 250px;
+  }
+  .about {
+    font-size: 23px;
+  }
 }
 
 /* Medium Devices */
