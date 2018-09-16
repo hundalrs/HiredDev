@@ -45,6 +45,38 @@
     clip-path: none;
   }
 
+  /***new stuff **/
+
+  .container-full-bg {
+    background-color: #17a2b8;
+    height: 100vh;
+  }
+
+  .register-text {
+    color: #fff;
+  }
+
+  .login-text {
+    color: #fff;
+  }
+
+  .btn-white-auth {
+    color: #fff;
+    background-color: #fd5c63;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 30px;
+    display: inline-block;
+    border-radius: 0px;
+    transition: all 0.2s;
+    font-weight: 700;
+    font: "Ubuntu";
+    border-radius: 100px;
+    margin-left: 40%;
+  }
+
+  /****/
+
   .heading-primary-main {
     font-size: 40px;
   }
@@ -71,6 +103,38 @@
     left: 60%;
   }
 
+  /***new stuff **/
+
+  .container-full-bg {
+    background-color: #17a2b8;
+    height: 100vh;
+  }
+
+  .register-text {
+    color: #fff;
+  }
+
+  .login-text {
+    color: #fff;
+  }
+
+  .btn-white-auth {
+    color: #fff;
+    background-color: #fd5c63;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 30px;
+    display: inline-block;
+    border-radius: 0px;
+    transition: all 0.2s;
+    font-weight: 700;
+    font: "Ubuntu";
+    border-radius: 100px;
+    margin-left: 40%;
+  }
+
+  /****/
+
   .login-link {
     left: 80%;
   }
@@ -95,6 +159,25 @@
   .modal-content-pic {
     top: 175%;
   }
+
+  .btn-white-auth {
+    color: #fff;
+    background-color: #fd5c63;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 30px;
+    display: inline-block;
+    border-radius: 0px;
+    transition: all 0.2s;
+    font-weight: 700;
+    font: "Ubuntu";
+    border-radius: 100px;
+    margin-left: 40%;
+  }
+
+  .desktop {
+    display: none;
+  }
 }
 
 @media (max-height: 604px) {
@@ -103,5 +186,24 @@
   }
   .outer {
     clip-path: none;
+  }
+
+  .btn-white-auth {
+    color: #fff;
+    background-color: #fd5c63;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 30px;
+    display: inline-block;
+    border-radius: 0px;
+    transition: all 0.2s;
+    font-weight: 700;
+    font: "Ubuntu";
+    border-radius: 100px;
+    margin-left: 40%;
+  }
+
+  .desktop {
+    display: none;
   }
 }
