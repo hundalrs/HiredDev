@@ -139,7 +139,7 @@
 .bg-modal-pic {
   width: 50%;
   height: 50%;
-  background-color: rgba(0, 0, 0, 0.00001);
+  background-color: rgba(0, 0, 0, 0);
   position: absolute;
   top: 10%;
   justify-content: center;
