@@ -67,7 +67,7 @@ class Register extends Component {
       <div className="register">
         {user ? user.name : null}
         <div className="container-full-bg">
-          <div className>
+          <div className="register-text">
             <div className="row">
               <div className="col-md-8 m-auto">
                 <h1 className="display-4 text-center">Sign Up</h1>
@@ -106,10 +106,18 @@ class Register extends Component {
                     onChange={this.onChange}
                     error={errors.password2}
                   />
-                  <input
-                    type="submit"
-                    className="btn btn-info btn-block mt-4 mb-4"
-                  />
+                  <div className="mobile">
+                    <input
+                      type="submit"
+                      className="mt-4 mb-4 btn-about-auth btn-white-auth"
+                    />
+                  </div>
+                  <div className="desktop">
+                    <input
+                      type="submit"
+                      className="btn btn-info btn-block mt-4 mb-4"
+                    />
+                  </div>
                 </form>
               </div>
             </div>
