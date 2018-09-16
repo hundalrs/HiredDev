@@ -15,6 +15,8 @@ import Navbar from "./components/layout/Navbar";
 // import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import Dashboard from "./components/dashboard/Dashboard";
+import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
 import CreateJob from "./components/create-job/CreateJob";
 import EditJob from "./components/create-job/EditJob";
 import Notes from "./components/notes/Notes";
@@ -64,6 +66,8 @@ class App extends Component {
             <div>
               <Switch>
                 <Route exact path="/" component={Landing} />
+                <Route exact path="/signup" component={Register} />
+                <Route exact path="/login" component={Login} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/add-job" component={CreateJob} />
                 <PrivateRoute exact path="/edit-job/:id" component={EditJob} />

@@ -111,47 +111,95 @@ class Landing extends Component {
     }
 
     return (
-      <div className="outer">
-        <header className="header">
-          <div className="bg-modal-pic">
-            <div className="modal-content-pic">
-              <div className="landing-img">
-                <img src="../../img/dashboard-main.jpg" alt="" />
+      <div className="all">
+        <div className="desktop">
+          <div className="outer">
+            <header className="header">
+              <div className="bg-modal-pic">
+                <div className="modal-content-pic">
+                  <div className="landing-img">
+                    <img src="../../img/dashboard-main.jpg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div className="text-box">
+                <h1 className="heading-primary">
+                  <span className="heading-primary-main">HiredDev</span>
+                  <span className="heading-primary-sub">
+                    Your tool for the job search
+                  </span>
+                </h1>
+                <Link
+                  to="/"
+                  className="btn-about btn-white"
+                  onClick={this.onAbout}
+                >
+                  About HiredDev
+                </Link>
+                <br />
+                <br />
+                <br />
+              </div>
+              <Link
+                to="/"
+                className="login-link btn-landing btn-login un"
+                onClick={this.onLogin}
+                style={{ textDecoration: "none" }}
+              >
+                Log In
+              </Link>
+              <Link
+                to="/"
+                className="signup-link btn-landing btn-signup un"
+                onClick={this.onSignup}
+                style={{ textDecoration: "none" }}
+              >
+                Sign Up
+              </Link>
+              {modal}
+            </header>
+          </div>
+        </div>
+        <div className="mobile">
+          <div className="outer">
+            <div className="home-cover">
+              <div className="home-content-box">
+                <div className="home-content-box-inner text-center">
+                  <div className="home-heading">
+                    <h1 className="heading-primary">
+                      <span className="heading-primary-main">HiredDev</span>
+                      <span className="heading-primary-sub">
+                        Your tool for the job search
+                      </span>
+                    </h1>
+                    <Link
+                      to="/"
+                      className="btn-about btn-white"
+                      onClick={this.onAbout}
+                    >
+                      About HiredDev
+                    </Link>
+                    <Link
+                      to="/login"
+                      className="login-link btn-landing btn-login un"
+                      style={{ textDecoration: "none" }}
+                    >
+                      Log In
+                    </Link>
+                    <Link
+                      to="/signup"
+                      className="signup-link btn-landing btn-signup un"
+                      style={{ textDecoration: "none" }}
+                    >
+                      Sign Up
+                    </Link>
+                    {modal}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="text-box">
-            <h1 className="heading-primary">
-              <span className="heading-primary-main">HiredDev</span>
-              <span className="heading-primary-sub">
-                Your tool for the job search
-              </span>
-            </h1>
-            <Link to="/" className="btn-about btn-white" onClick={this.onAbout}>
-              About HiredDev
-            </Link>
-            <br />
-            <br />
-            <br />
-          </div>
-          <Link
-            to="/"
-            className="login-link btn-landing btn-login un"
-            onClick={this.onLogin}
-            style={{ textDecoration: "none" }}
-          >
-            Log In
-          </Link>
-          <Link
-            to="/"
-            className="signup-link btn-landing btn-signup un"
-            onClick={this.onSignup}
-            style={{ textDecoration: "none" }}
-          >
-            Sign Up
-          </Link>
-          {modal}
-        </header>
+        </div>
       </div>
     );
   }
