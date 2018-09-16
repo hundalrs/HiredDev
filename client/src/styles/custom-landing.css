@@ -1,0 +1,215 @@
+@media screen and (max-width: 1400px) and (min-width: 1210px) {
+  .modal-content-pic {
+    top: 140%;
+  }
+}
+
+@media screen and (max-width: 1209px) and (min-width: 1028px) {
+  .modal-content-pic {
+    top: 150%;
+  }
+  .heading-primary-main {
+    font-size: 30px;
+  }
+  .heading-primary-sub {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 1028px) and (min-width: 946px) {
+  .modal-content-pic {
+    top: 155%;
+  }
+  .heading-primary-main {
+    font-size: 30px;
+  }
+  .heading-primary-sub {
+    font-size: 10px;
+  }
+  .btn-about:link,
+  .btn-about:visited {
+    font-size: 12px;
+    padding: 12px 25px;
+  }
+}
+
+@media screen and (max-width: 945px) and (min-width: 907px) {
+  .modal-content-pic {
+    top: 160%;
+  }
+  .heading-primary-main {
+    font-size: 30px;
+  }
+  .heading-primary-sub {
+    font-size: 8px;
+  }
+  .btn-about:link,
+  .btn-about:visited {
+    font-size: 12px;
+    padding: 12px 25px;
+  }
+}
+
+@media screen and (max-width: 906px) and (min-width: 740px) {
+  .outer {
+    text-align: center;
+  }
+  .modal-content-pic {
+    top: 165%;
+  }
+  .heading-primary-main {
+    font-size: 30px;
+  }
+  .heading-primary-sub {
+    font-size: 7px;
+  }
+  .btn-about:link,
+  .btn-about:visited {
+    font-size: 12px;
+    padding: 12px 25px;
+  }
+  .login-link {
+    font-size: 12px;
+  }
+  .signup-link {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 906px) and (min-width: 740px) {
+  .outer {
+    text-align: center;
+  }
+  .modal-content-pic {
+    top: 165%;
+  }
+  .heading-primary-main {
+    font-size: 30px;
+  }
+  .heading-primary-sub {
+    font-size: 7px;
+    letter-spacing: 3px;
+  }
+  .btn-about:link,
+  .btn-about:visited {
+    font-size: 12px;
+    padding: 12px 25px;
+  }
+
+  .signup-link {
+    left: 75%;
+    font-size: 12px;
+  }
+  .login-link {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 739px) and (min-width: 694px) {
+  .modal-content-pic {
+    top: 170%;
+  }
+  .heading-primary-main {
+    font-size: 30px;
+    letter-spacing: 2px;
+  }
+  .heading-primary-sub {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+  .btn-about:link,
+  .btn-about:visited {
+    font-size: 12px;
+    padding: 12px 25px;
+  }
+
+  .signup-link {
+    left: 75%;
+  }
+  .login-link {
+    font-size: 12px;
+  }
+
+  .text-box {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 693px) and (min-width: 550px) {
+  .modal-content-pic {
+    top: 175%;
+  }
+  .heading-primary-main {
+    font-size: 30px;
+    letter-spacing: 2px;
+  }
+  .heading-primary-sub {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+  .btn-about:link,
+  .btn-about:visited {
+    font-size: 12px;
+    padding: 12px 25px;
+  }
+
+  .text-box {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .signup-link {
+    left: 75%;
+    font-size: 12px;
+  }
+  .login-link {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 693px) {
+  .modal-content-pic {
+    display: none;
+    position: static;
+    width: 0px;
+    height: 0px;
+  }
+
+  .bg-modal-pic {
+    display: none;
+    position: static;
+    width: 0.1%;
+    height: 0.1%;
+  }
+
+  .text-box {
+    top: 35%;
+    right: 20%;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .heading-primary-main {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  .heading-primary-sub {
+    font-size: 6px;
+    letter-spacing: 2px;
+  }
+  .btn-about:link,
+  .btn-about:visited {
+    font-size: 12px;
+    padding: 12px 25px;
+  }
+
+  .signup-link {
+    left: 60%;
+    font-size: 12px;
+  }
+
+  .login-link {
+    font-size: 12px;
+  }
+}

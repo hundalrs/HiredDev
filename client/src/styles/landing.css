@@ -1,8 +1,4 @@
-.jumbotron {
-  background-size: cover;
-  height: 100vh;
-  margin-bottom: 0;
-}
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Ubuntu");
 
 .main-text {
   margin-top: 100px;
@@ -20,20 +16,22 @@
 }
 
 .outer {
-  padding: 20px;
-}
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(19, 84, 122, 0.7),
-      rgba(128, 208, 199, 0.7)
-    ),
-    url(../img/success.jpg);
+  height: 100vh;
+  background-color: #17a2b8;
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  z-index: 1;
+  position: relative;
+  clip-path: polygon(
+    30% 0%,
+    100% 0,
+    100% 30%,
+    100% 81%,
+    69% 82%,
+    30% 87%,
+    0 91%,
+    0 0
+  );
 }
 
 .heading-primary {
@@ -41,14 +39,14 @@
   text-transform: uppercase;
 
   backface-visibility: hidden;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
-  font-weight: 400;
-  letter-spacing: 35px;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 24px;
   margin-bottom: 5px;
 
   animation-name: moveInLeft;
@@ -59,16 +57,17 @@
 .text-box {
   position: absolute;
   top: 40%;
-  left: 50%;
+  left: 25%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 500;
   letter-spacing: 10px;
+  margin-right: 25px;
 }
 
 .login-link {
@@ -91,17 +90,12 @@
   left: 80%;
 }
 
-.outer {
-  position: relative;
-}
-
 .bg-modal {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -141,6 +135,28 @@
   overflow: auto;
 }
 
+.bg-modal-pic {
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.00001);
+  position: absolute;
+  top: 10%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.modal-content-pic {
+  background-size: contain;
+  width: 800px;
+  height: 1000px;
+  background-repeat: no-repeat;
+  background-image: url("../img/dashboard-main.jpg");
+  top: 130%;
+  right: -95%;
+  position: relative;
+}
+
 .close {
   position: absolute;
   top: 0;
@@ -149,9 +165,31 @@
   color: #333;
   transform: rotate(45deg);
   cursor: pointer;
-  &:hover {
-    color: #666;
-  }
+}
+
+.btn-about:link,
+.btn-about:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 30px;
+  display: inline-block;
+  border-radius: 0px;
+  transition: all 0.2s;
+  background-color: #fd5c63;
+  color: #fff;
+  font-weight: 700;
+  font: "Ubuntu";
+  border-radius: 100px;
+}
+
+.btn-about:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  color: #777;
+}
+
+.btn-about:active {
+  transform: translateY(-1px);
 }
 
 .btn:link,
@@ -180,7 +218,7 @@
 }
 
 .btn-landing:hover {
-  border-bottom: 2px solid #fff;
+  /* border-bottom: 2px solid #fff; */
   color: white;
 }
 
@@ -191,6 +229,20 @@
   padding-bottom: 15px;
   font: times;
   font-size: 16px;
+}
+
+.un:after {
+  content: "";
+  margin-top: 10px;
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: white;
+  transition: 300ms;
+}
+
+.un:hover:after {
+  width: 100%;
 }
 
 @keyframes moveInLeft {
