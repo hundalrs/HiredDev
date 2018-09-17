@@ -26,13 +26,13 @@ class Register extends Component {
       this.props.history.push("/dashboard");
     }
 
-    window.addEventListener(
-      "resize",
-      () => {
-        this.props.history.push("/");
-      },
-      false
-    );
+    // window.addEventListener(
+    //   "resize",
+    //   () => {
+    //     this.props.history.push("/");
+    //   },
+    //   false
+    // );
   }
 
   onChange(e) {
