@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
@@ -22,6 +22,14 @@ class Login extends Component {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
     }
+
+    window.addEventListener(
+      "resize",
+      () => {
+        this.props.history.push("/");
+      },
+      false
+    );
   }
 
   componentWillReceiveProps(nextProps) {
