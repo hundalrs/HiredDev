@@ -61,6 +61,17 @@ class Landing extends Component {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
     }
+
+    window.addEventListener(
+      "resize",
+      () => {
+        this.setState({
+          login: false,
+          signup: false
+        });
+      },
+      false
+    );
   }
 
   render() {
