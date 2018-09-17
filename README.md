@@ -28,7 +28,7 @@ Note: you have to give values to the environmental variables in order for this p
 
 * Search feature to filter through jobs
 * Set up text reminder for interviews
-* More appealing UI/UX
+* ~~More appealing UI/UX~~
 * Display only 10, 100, or all jobs on single page
 * Post a congratulations message when status changes to offer
 
