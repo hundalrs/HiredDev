@@ -118,7 +118,7 @@ class Landing extends Component {
               <div className="bg-modal-pic">
                 <div className="modal-content-pic">
                   <div className="landing-img">
-                    <img src="../../img/dashboard-main.jpg" alt="" />
+                    <img src="../../img/dashboard-main" alt="" />
                   </div>
                 </div>
               </div>
