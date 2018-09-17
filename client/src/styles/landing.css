@@ -101,7 +101,7 @@
   font-weight: 1px;
   letter-spacing: 2px;
   transform: translate(-50%, -50%);
-  top: 5%;
+  top: 40px;
   left: 90%;
 }
 
@@ -111,7 +111,7 @@
   font-weight: 1px;
   letter-spacing: 2px;
   transform: translate(-50%, -50%);
-  top: 5%;
+  top: 40px;
   left: 80%;
 }
 
@@ -328,7 +328,7 @@
   display: inline-block;
   width: 60px;
   height: 34px;
-  margin-top: 25px;
+  margin-top: 20px;
   margin-left: 25px;
 }
 
