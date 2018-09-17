@@ -19,10 +19,30 @@
   margin-bottom: 50px;
 }
 
-.outer {
+.outer-light {
   height: 100vh;
   overflow: hidden;
   background-color: #17a2b8;
+  background-size: cover;
+  background-position: top;
+  z-index: 1;
+  position: relative;
+  clip-path: polygon(
+    30% 0%,
+    100% 0,
+    100% 30%,
+    100% 81%,
+    69% 82%,
+    30% 87%,
+    0 91%,
+    0 0
+  );
+}
+
+.outer-dark {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #171c28;
   background-size: cover;
   background-position: top;
   z-index: 1;
@@ -296,4 +316,71 @@
   font-weight: 300;
   margin: 20px 0 20px 0;
   text-transform: uppercase;
+}
+
+/*********************************
+          Dark Mode View
+**********************************/
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

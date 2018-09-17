@@ -14,7 +14,8 @@ class Landing extends Component {
     this.state = {
       signup: false,
       login: false,
-      about: false
+      about: false,
+      darkmode: false
     };
 
     this.onSignup = this.onSignup.bind(this);
@@ -24,6 +25,13 @@ class Landing extends Component {
     this.onLoginClose = this.onLoginClose.bind(this);
     this.onAbout = this.onAbout.bind(this);
     this.onAboutClose = this.onAboutClose.bind(this);
+    this.onDarkMode = this.onDarkMode.bind(this);
+  }
+
+  onDarkMode(e) {
+    this.setState(prevState => ({
+      darkmode: !prevState.darkmode
+    }));
   }
 
   onSignup(e) {
@@ -124,7 +132,7 @@ class Landing extends Component {
     return (
       <div className="all">
         <div className="desktop">
-          <div className="outer">
+          <div className={"outer-" + (this.state.darkmode ? "dark" : "light")}>
             <header className="header">
               <div className="bg-modal-pic">
                 <div className="modal-content-pic">
@@ -167,12 +175,16 @@ class Landing extends Component {
               >
                 Sign Up
               </Link>
+              <label class="switch">
+                <input type="checkbox" onClick={this.onDarkMode} />
+                <span class="slider round" />
+              </label>
               {modal}
             </header>
           </div>
         </div>
         <div className="mobile">
-          <div className="outer">
+          <div className="outer-light">
             <div className="home-cover">
               <div className="home-content-box">
                 <div className="home-content-box-inner text-center">
