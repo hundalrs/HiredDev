@@ -29,6 +29,9 @@
   .mobile {
     display: none;
   }
+  .modal-content-pic {
+    top: 175%;
+  }
 }
 
 /* Small Devices */
