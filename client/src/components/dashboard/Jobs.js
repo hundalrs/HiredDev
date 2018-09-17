@@ -111,7 +111,7 @@ class Jobs extends Component {
         <td>
           <button
             onClick={this.onDelete.bind(this, job._id)}
-            className="btn btn-danger"
+            className="btn btn-danger delete-button"
           >
             Delete
           </button>
