@@ -117,8 +117,8 @@ class Landing extends Component {
             <div className="close" onClick={this.onMobileClose} />
             <h1 style={{ color: "black" }}>Sorry!</h1>
             <h6 className="about">
-              Sorry, our mobile and tablet version of the app is not quite
-              ready. If you want to use the app, please use a desktop! <br />
+              Sorry, our mobile version of the app is not quite ready. If you
+              want to use the app, please use a desktop! <br />
               <br />
               Thanks for the patience while we try to give you the best
               experience possible.
