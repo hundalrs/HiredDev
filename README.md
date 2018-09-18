@@ -23,6 +23,7 @@ Note: you have to give values to the environmental variables in order for this p
 * Ability to take notes and access them for each individual job
 * Ability to edit job entry to update status or add notes
 * Unit Tests for API
+* Created a Dark Mode for landing page
 
 ## Future Features
 
