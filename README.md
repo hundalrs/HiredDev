@@ -1,7 +1,5 @@
 # HiredDev
 
-img src="https://drive.google.com/file/d/10zwXJLvUHRnORjKf6QTrSu_Xb_ToCEUK/view?usp=sharing"
-
 ## Description
 
 HiredDev is an ongoing project that I am working on, and it is a platform that allows users to keep their job search process organized through job tracking, notes, and search features.
