@@ -8,13 +8,28 @@ import Jobs from "./Jobs";
 import "../../styles/dashboard.css";
 
 class Dashboard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      query: ""
+    };
+
+    this.onNewSearch = this.onNewSearch.bind(this);
+  }
+
   componentDidMount() {
     this.props.getCurrentJobs();
+  }
+
+  onNewSearch(e) {
+    this.setState({ query: e.target.value });
+    console.log(this.state.query);
   }
 
   render() {
     const { user } = this.props.auth;
     const { jobs, loading } = this.props.jobs;
+    const { query } = this.state;
 
     let dashboardContent;
 
@@ -26,7 +41,7 @@ class Dashboard extends Component {
         dashboardContent = (
           <div>
             <br />
-            <Jobs myJobs={jobs.allJobs} />
+            <Jobs myJobs={jobs.allJobs} query={query} />
           </div>
         );
       } else {
@@ -46,6 +61,12 @@ class Dashboard extends Component {
     return (
       <div className="dashboard">
         <h1 className="mt-4">Dashboard</h1>
+        <input
+          onChange={this.onNewSearch}
+          type="text"
+          placeholder="Search Company"
+          className="search-bar"
+        />
         {dashboardContent}
       </div>
     );
