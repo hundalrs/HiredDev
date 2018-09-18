@@ -17,7 +17,8 @@ class Landing extends Component {
       about: false,
       darkmode: false,
       mobile: false,
-      close: false
+      close: false,
+      width: 0
     };
 
     this.onSignup = this.onSignup.bind(this);
@@ -28,7 +29,8 @@ class Landing extends Component {
     this.onAbout = this.onAbout.bind(this);
     this.onAboutClose = this.onAboutClose.bind(this);
     this.onDarkMode = this.onDarkMode.bind(this);
-    this.onMobileClose = this.onMobileClose(this);
+    this.onMobileClose = this.onMobileClose.bind(this);
+    this.updateDimensions = this.updateDimensions.bind(this);
   }
 
   onDarkMode(e) {
@@ -73,10 +75,17 @@ class Landing extends Component {
     this.setState({ close: true });
   }
 
+  updateDimensions(e) {
+    this.setState({ width: window.innerWidth - 100 });
+  }
+
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
     }
+
+    this.updateDimensions();
+    window.addEventListener("resize", this.updateDimensions);
 
     window.addEventListener(
       "resize",
@@ -91,7 +100,7 @@ class Landing extends Component {
   }
 
   componentWillMount() {
-    if (window.innerWidth < 992) {
+    if (this.state.width < 992) {
       this.setState({ mobile: true });
     }
   }
