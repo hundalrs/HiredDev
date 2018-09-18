@@ -1,6 +1,6 @@
 # HiredDev
 
-![alt text](https://drive.google.com/file/d/10zwXJLvUHRnORjKf6QTrSu_Xb_ToCEUK/view?usp=sharing)
+img src="https://drive.google.com/file/d/10zwXJLvUHRnORjKf6QTrSu_Xb_ToCEUK/view?usp=sharing"
 
 ## Description
 
