@@ -34,6 +34,7 @@ Note: you have to give values to the environmental variables in order for this p
 * ~~More appealing UI/UX~~
 * Display only 10, 100, or all jobs on single page
 * Post a congratulations message when status changes to offer
+* Finish making mobile version
 
 ## Future
 
