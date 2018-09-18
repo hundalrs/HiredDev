@@ -79,7 +79,7 @@ class Jobs extends Component {
 
     const jobs = this.props.myJobs.map(
       job =>
-        job.company.includes(this.props.query) ? (
+        job.company.toLowerCase().includes(this.props.query.toLowerCase()) ? (
           <tr key={job._id}>
             <td>{job.company}</td>
             <td>{job.position}</td>
