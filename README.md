@@ -24,6 +24,8 @@ Note: you have to give values to the environmental variables in order for this p
 * Ability to edit job entry to update status or add notes
 * Unit Tests for API
 * Created a Dark Mode for landing page
+* Search feature to filter through jobs
+* Appealing UI/UX on landing page
 
 ## Future Features
 
