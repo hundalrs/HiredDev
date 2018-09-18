@@ -23,7 +23,6 @@ class Dashboard extends Component {
 
   onNewSearch(e) {
     this.setState({ query: e.target.value });
-    console.log(this.state.query);
   }
 
   render() {
