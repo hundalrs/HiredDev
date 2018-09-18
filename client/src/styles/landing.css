@@ -62,7 +62,6 @@
 .heading-primary {
   color: white;
   text-transform: uppercase;
-
   backface-visibility: hidden;
   margin-bottom: 60px;
 }
@@ -296,7 +295,6 @@
 
 .home-cover {
   height: 100%;
-  background-color: #17a2b8;
 }
 
 .home-content-box {

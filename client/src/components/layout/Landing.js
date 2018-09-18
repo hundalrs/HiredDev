@@ -223,7 +223,7 @@ class Landing extends Component {
           </div>
         </div>
         <div className="mobile">
-          <div className="outer-light">
+          <div className={"outer-" + (this.state.darkmode ? "dark" : "light")}>
             <div className="home-cover">
               <div className="home-content-box">
                 <div className="home-content-box-inner text-center">
