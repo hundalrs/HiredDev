@@ -15,7 +15,9 @@ class Landing extends Component {
       signup: false,
       login: false,
       about: false,
-      darkmode: false
+      darkmode: false,
+      mobile: false,
+      close: false
     };
 
     this.onSignup = this.onSignup.bind(this);
@@ -26,6 +28,7 @@ class Landing extends Component {
     this.onAbout = this.onAbout.bind(this);
     this.onAboutClose = this.onAboutClose.bind(this);
     this.onDarkMode = this.onDarkMode.bind(this);
+    this.onMobileClose = this.onMobileClose(this);
   }
 
   onDarkMode(e) {
@@ -65,6 +68,11 @@ class Landing extends Component {
     this.setState({ about: false });
   }
 
+  onMobileClose(e) {
+    this.setState({ mobile: false });
+    this.setState({ close: true });
+  }
+
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
@@ -82,12 +90,34 @@ class Landing extends Component {
     );
   }
 
+  componentWillMount() {
+    if (window.innerWidth < 992) {
+      this.setState({ mobile: true });
+    }
+  }
+
   render() {
-    const { signup, login, about } = this.state;
+    const { signup, login, about, mobile, close } = this.state;
 
     let modal;
 
-    if (signup === true) {
+    if (window.innerWidth < 992 && mobile === true && close === false) {
+      modal = (
+        <div className="bg-modal">
+          <div className="modal-content-about">
+            <div className="close" onClick={this.onMobileClose} />
+            <h1 style={{ color: "black" }}>Sorry!</h1>
+            <h6 className="about">
+              Sorry, our mobile and tablet version of the app is not quite
+              ready. If you want to use the app, please use a desktop! <br />
+              <br />
+              Thanks for the patience while we try to give you the best
+              experience possible.
+            </h6>
+          </div>
+        </div>
+      );
+    } else if (signup === true) {
       modal = (
         <div className="bg-modal">
           <div className="modal-content-signup">
@@ -203,14 +233,14 @@ class Landing extends Component {
                       About HiredDev
                     </Link>
                     <Link
-                      to="/login"
+                      to="/"
                       className="login-link btn-landing btn-login un"
                       style={{ textDecoration: "none" }}
                     >
                       Log In
                     </Link>
                     <Link
-                      to="/signup"
+                      to="/"
                       className="signup-link btn-landing btn-signup un"
                       style={{ textDecoration: "none" }}
                     >
