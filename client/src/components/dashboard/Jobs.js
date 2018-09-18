@@ -77,47 +77,50 @@ class Jobs extends Component {
       }
     }
 
-    const jobs = this.props.myJobs.map(job => (
-      <tr key={job._id}>
-        <td>{job.company}</td>
-        <td>{job.position}</td>
-        <td>{job.location}</td>
-        <td>{job.status}</td>
-        <td>{job.contactName}</td>
-        <td>{job.contactEmail}</td>
-        <td>{job.contactPhone}</td>
-        <td>
-          <Link
-            to={{
-              pathname: `/notes/${job._id}`,
-              state: { myjobs: this.props.myJobs }
-            }}
-            className="btn btn-info"
-          >
-            Notes
-          </Link>
-        </td>
-        <td>
-          <Link
-            to={{
-              pathname: `/edit-job/${job._id}`,
-              state: { myjobs: this.props.myJobs }
-            }}
-            className="btn btn-success"
-          >
-            Edit
-          </Link>
-        </td>
-        <td>
-          <button
-            onClick={this.onDelete.bind(this, job._id)}
-            className="btn btn-danger delete-button"
-          >
-            Delete
-          </button>
-        </td>
-      </tr>
-    ));
+    const jobs = this.props.myJobs.map(
+      job =>
+        job.company.includes(this.props.query) ? (
+          <tr key={job._id}>
+            <td>{job.company}</td>
+            <td>{job.position}</td>
+            <td>{job.location}</td>
+            <td>{job.status}</td>
+            <td>{job.contactName}</td>
+            <td>{job.contactEmail}</td>
+            <td>{job.contactPhone}</td>
+            <td>
+              <Link
+                to={{
+                  pathname: `/notes/${job._id}`,
+                  state: { myjobs: this.props.myJobs }
+                }}
+                className="btn btn-info"
+              >
+                Notes
+              </Link>
+            </td>
+            <td>
+              <Link
+                to={{
+                  pathname: `/edit-job/${job._id}`,
+                  state: { myjobs: this.props.myJobs }
+                }}
+                className="btn btn-success"
+              >
+                Edit
+              </Link>
+            </td>
+            <td>
+              <button
+                onClick={this.onDelete.bind(this, job._id)}
+                className="btn btn-danger delete-button"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        ) : null
+    );
 
     return (
       <div id="widen">

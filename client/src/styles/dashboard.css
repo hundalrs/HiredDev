@@ -1,3 +1,10 @@
 .dashboard {
   margin: 30px;
 }
+
+.search-bar {
+  float: right;
+  margin-top: 90px;
+  padding: 6px;
+  font-size: 17px;
+}
