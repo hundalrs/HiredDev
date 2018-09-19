@@ -85,9 +85,9 @@ class Jobs extends Component {
             <td>{job.position}</td>
             <td>{job.location}</td>
             <td>{job.status}</td>
-            <td>{job.contactName}</td>
+            {/* <td>{job.contactName}</td>
             <td>{job.contactEmail}</td>
-            <td>{job.contactPhone}</td>
+            <td>{job.contactPhone}</td> */}
             <td>
               <Link
                 to={{
@@ -135,9 +135,9 @@ class Jobs extends Component {
               <th>Position</th>
               <th>Location</th>
               <th>Status</th>
-              <th>Contact Name</th>
+              {/* <th>Contact Name</th>
               <th>Contact Email</th>
-              <th>Contact Phone</th>
+              <th>Contact Phone</th> */}
               <th />
               <th />
               <th />
