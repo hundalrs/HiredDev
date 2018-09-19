@@ -51,16 +51,16 @@
   /***new stuff **/
 
   .container-full-bg {
-    background-color: #17a2b8;
+    /* background-color: #17a2b8; */
     height: 100vh;
   }
 
   .register-text {
-    color: #fff;
+    color: #777;
   }
 
   .login-text {
-    color: #fff;
+    color: #777;
   }
 
   .btn-white-auth {
@@ -109,16 +109,16 @@
   /***new stuff **/
 
   .container-full-bg {
-    background-color: #17a2b8;
+    /* background-color: #17a2b8; */
     height: 100vh;
   }
 
   .register-text {
-    color: #fff;
+    color: #777;
   }
 
   .login-text {
-    color: #fff;
+    color: #777;
   }
 
   .btn-white-auth {

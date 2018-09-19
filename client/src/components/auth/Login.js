@@ -90,7 +90,7 @@ class Login extends Component {
                   <div className="mobile">
                     <input
                       type="submit"
-                      className="mt-4 mb-4 btn-about-auth btn-white-auth"
+                      className="btn btn-info btn-block mt-4 mb-4"
                     />
                   </div>
                   <div className="desktop">

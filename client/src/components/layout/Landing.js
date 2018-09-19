@@ -110,7 +110,7 @@ class Landing extends Component {
 
     let modal;
 
-    if (window.innerWidth < 992 && mobile === true && close === false) {
+    if (window.innerWidth < 700 && mobile === true && close === false) {
       modal = (
         <div className="bg-modal">
           <div className="modal-content-about">
@@ -242,16 +242,18 @@ class Landing extends Component {
                       About HiredDev
                     </Link>
                     <Link
-                      to="/login"
+                      to="/"
                       className="login-link btn-landing btn-login un"
                       style={{ textDecoration: "none" }}
+                      onClick={this.onLogin}
                     >
                       Log In
                     </Link>
                     <Link
-                      to="/signup"
+                      to="/"
                       className="signup-link btn-landing btn-signup un"
                       style={{ textDecoration: "none" }}
+                      onClick={this.onSignup}
                     >
                       Sign Up
                     </Link>
