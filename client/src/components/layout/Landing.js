@@ -110,7 +110,7 @@ class Landing extends Component {
 
     let modal;
 
-    if (window.innerWidth < 600 && mobile === true && close === false) {
+    if (window.innerWidth < 992 && mobile === true && close === false) {
       modal = (
         <div className="bg-modal">
           <div className="modal-content-about">
