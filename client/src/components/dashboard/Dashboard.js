@@ -39,6 +39,12 @@ class Dashboard extends Component {
       if (Object.keys(jobs).length > 0) {
         dashboardContent = (
           <div>
+            <input
+              onChange={this.onNewSearch}
+              type="text"
+              placeholder="Search Company"
+              className="search-bar"
+            />
             <br />
             <Jobs myJobs={jobs.allJobs} query={query} />
           </div>
@@ -60,12 +66,6 @@ class Dashboard extends Component {
     return (
       <div className="dashboard">
         <h1 className="mt-4">Dashboard</h1>
-        <input
-          onChange={this.onNewSearch}
-          type="text"
-          placeholder="Search Company"
-          className="search-bar"
-        />
         {dashboardContent}
       </div>
     );

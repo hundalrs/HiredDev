@@ -16,9 +16,6 @@ class Landing extends Component {
       login: false,
       about: false,
       darkmode: false
-      // mobile: false,
-      // close: false,
-      // width: 0
     };
 
     this.onSignup = this.onSignup.bind(this);
@@ -106,27 +103,10 @@ class Landing extends Component {
   }
 
   render() {
-    const { signup, login, about, mobile, close } = this.state;
+    const { signup, login, about } = this.state;
 
     let modal;
 
-    // if (window.innerWidth < 790 && mobile === true && close === false) {
-    //   modal = (
-    //     <div className="bg-modal">
-    //       <div className="modal-content-about">
-    //         <div className="close" onClick={this.onMobileClose} />
-    //         <h1 style={{ color: "black" }}>Sorry!</h1>
-    //         <h6 className="about">
-    //           Sorry, our mobile version of the app is not quite ready. If you
-    //           want to use the app, please use a desktop! <br />
-    //           <br />
-    //           Thanks for the patience while we try to give you the best
-    //           experience possible.
-    //         </h6>
-    //       </div>
-    //     </div>
-    //   );
-    // } else
     if (signup === true) {
       modal = (
         <div className="bg-modal">

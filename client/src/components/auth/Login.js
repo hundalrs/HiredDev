@@ -22,14 +22,6 @@ class Login extends Component {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
     }
-
-    // window.addEventListener(
-    //   "resize",
-    //   () => {
-    //     this.props.history.push("/");
-    //   },
-    //   false
-    // );
   }
 
   componentWillReceiveProps(nextProps) {
