@@ -16,6 +16,9 @@ class CreateJob extends Component {
       location: "",
       status: "",
       notes: "",
+      contactName: "",
+      contactEmail: "",
+      contactPhone: "",
       errors: {}
     };
 
@@ -90,6 +93,27 @@ class CreateJob extends Component {
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
+                />
+                <TextFieldGroup
+                  placeholder="Contact Name"
+                  name="contactName"
+                  value={this.state.contactName}
+                  onChange={this.onChange}
+                  error={errors.contactName}
+                />
+                <TextFieldGroup
+                  placeholder="Contact Email"
+                  name="contactEmail"
+                  value={this.state.contactEmail}
+                  onChange={this.onChange}
+                  error={errors.contactEmail}
+                />
+                <TextFieldGroup
+                  placeholder="Contact Phone"
+                  name="contactPhone"
+                  value={this.state.contactPhone}
+                  onChange={this.onChange}
+                  error={errors.contactPhone}
                 />
                 <TextArea
                   placeholder="Notes"
