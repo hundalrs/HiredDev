@@ -124,8 +124,8 @@ class Jobs extends Component {
 
     return (
       <div id="widen">
-        <h4 className="mb-4">Job Applications</h4>
-        <Link to="/add-job" className="btn btn-sm btn-info mb-4">
+        {/* <h4 className="mb-4">Job Applications</h4> */}
+        <Link to="/add-job" className="btn btn-sm btn-info mb-4 my-button">
           Add Job
         </Link>
         <div className="table-responsive">
