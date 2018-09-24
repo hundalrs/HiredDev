@@ -125,20 +125,22 @@ class Jobs extends Component {
         <Link to="/add-job" className="btn btn-sm btn-info mb-4">
           Add Job
         </Link>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Company</th>
-              <th>Position</th>
-              <th>Location</th>
-              <th>Status</th>
-              <th />
-              <th />
-              <th />
-            </tr>
-            {jobs}
-          </thead>
-        </table>
+        <div className="table-responsive">
+          <table className="table">
+            <thead>
+              <tr>
+                <th style={{ paddingRight: "14px" }}>Company</th>
+                <th>Position</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th />
+                <th />
+                <th />
+              </tr>
+              {jobs}
+            </thead>
+          </table>
+        </div>
         {modal}
       </div>
     );

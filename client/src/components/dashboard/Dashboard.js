@@ -58,6 +58,7 @@ class Dashboard extends Component {
             <Link to="/add-job" className="btn btn-lg btn-info mb-2">
               Add Job
             </Link>
+            <br />
           </div>
         );
       }
