@@ -4,17 +4,27 @@
 
 .search-bar {
   float: right;
-  margin-top: 90px;
+  margin-top: 34px;
   padding: 6px;
   font-size: 17px;
+  margin-bottom: 15px;
 }
 
 @media (max-width: 500px) {
+  /* do not display search component on phone yet */
   .search-bar {
+    display: none;
     float: inherit;
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-left: 140px;
     margin-bottom: 30px;
     padding: 10px;
-    border: 1px solid #000;
+    position: absolute;
+  }
+  .my-button {
+    position: relative;
+  }
+  .table {
+    margin-top: 5px;
   }
 }
